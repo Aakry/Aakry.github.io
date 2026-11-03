@@ -1,0 +1,28 @@
+/* İTÜ Kurumsal Laciverti Arka Plan */
+body {
+  background-color: #003057 !important;
+  color: #E2E8F0 !important; /* Göz yormayan arduvaz gri */
+}
+
+/* Menü için derin lacivert */
+.navbar {
+  background-color: #001A33 !important;
+  border-bottom: 1px solid #0EA5E9 !important; /* Koyu buz mavisi alt şerit */
+}
+
+/* Teknolojik Buz Mavisi (Cyan) Linkler */
+a, .nav-link {
+  color: #22D3EE !important;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+a:hover, .nav-link:hover {
+  color: #67E8F9 !important; /* Üzerine gelince daha parlak bir cyan */
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.5); /* Hafif siber/neon parlama efekti */
+}
+
+/* Başlıklar */
+h1, h2, h3, h4, h5, h6 {
+  color: #F8FAFC !important;
+}
