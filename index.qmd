@@ -1,0 +1,32 @@
+---
+title: "İlker Kayra Orman"
+subtitle: "Herhangi bir adam"
+---
+
+Aşağıdaki bağlantılar üzerinden ilgili sayfalara ulaşabilirsiniz:
+
+- **[Projeler](projeler.qmd)**
+- **[Dernek](dernek.qmd)**
+- **[Yemek (Yenilen/Yapılan(Daha çok yenilen))](yemek.qmd)**
+- **[Fotoğraf Galerisi](galeri.qmd)**
+
+---
+
+```{=html}
+<div style="max-width: 600px; margin-top: 40px; padding: 20px; background: rgba(0, 26, 51, 0.6); border: 1px solid #22D3EE; border-radius: 8px;">
+  <h3 style="color: #F8FAFC; margin-bottom: 15px;">Bana Mesaj Gönder</h3>
+  <form action="[https://formspree.io/f/mgaarogk](https://formspree.io/f/mgaarogk)" method="POST">
+    
+    <div style="margin-bottom: 15px;">
+      <label style="display: block; margin-bottom: 5px; color: #E2E8F0;">İsim / Rumuz (İsteğe bağlı):</label>
+      <input type="text" name="isim" placeholder="Adınız veya Anonim" style="width: 100%; padding: 10px; background: #003057; border: 1px solid #334E68; color: #FFF; border-radius: 4px;">
+    </div>
+
+    <div style="margin-bottom: 15px;">
+      <label style="display: block; margin-bottom: 5px; color: #E2E8F0;">Mesajınız:</label>
+      <textarea name="mesaj" rows="4" required placeholder="Mesajınızı buraya yazın..." style="width: 100%; padding: 10px; background: #003057; border: 1px solid #334E68; color: #FFF; border-radius: 4px;"></textarea>
+    </div>
+
+    <button type="submit" style="background: #22D3EE; color: #001A33; padding: 10px 20px; border: none; font-weight: bold; border-radius: 4px; cursor: pointer;">Gönder</button>
+  </form>
+</div>

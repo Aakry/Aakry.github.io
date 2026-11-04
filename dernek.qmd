@@ -1,0 +1,19 @@
+---
+title: "İ. Kayra Orman"
+about:
+  template: jolla
+  links:
+    - icon: file-earmark-pdf
+      text: Özgeçmiş (CV)
+      href: cv_ilker_kayra_orman.pdf
+    - icon: envelope
+      text: İletişim
+      href: mailto:ilkerkorman@gmail.com
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/ilkerkayraorman/
+    - icon: github
+      text: Github
+      href: https://github.com/Aakry
+---
+Diji depo

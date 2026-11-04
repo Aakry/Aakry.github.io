@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "yemek.html",
+    "href": "yemek.html",
+    "title": "İ. Kayra Orman",
+    "section": "",
+    "text": "Diji depo"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "İlker Kayra Orman",
+    "section": "",
+    "text": "Aşağıdaki bağlantılar üzerinden ilgili sayfalara ulaşabilirsiniz:\n\nProjeler\nDernek\nYemek (Yenilen/Yapılan(Daha çok yenilen))\nFotoğraf Galerisi\n\n\n\n\nBana Mesaj Gönder\n\n\n\n  &lt;label style=\"display: block; margin-bottom: 5px; color: #E2E8F0;\"&gt;İsim / Rumuz (İsteğe bağlı):&lt;/label&gt;\n  &lt;input type=\"text\" name=\"isim\" placeholder=\"Adınız veya Anonim\" style=\"width: 100%; padding: 10px; background: #003057; border: 1px solid #334E68; color: #FFF; border-radius: 4px;\"&gt;\n&lt;/div&gt;\n\n&lt;div style=\"margin-bottom: 15px;\"&gt;\n  &lt;label style=\"display: block; margin-bottom: 5px; color: #E2E8F0;\"&gt;Mesajınız:&lt;/label&gt;\n  &lt;textarea name=\"mesaj\" rows=\"4\" required placeholder=\"Mesajınızı buraya yazın...\" style=\"width: 100%; padding: 10px; background: #003057; border: 1px solid #334E68; color: #FFF; border-radius: 4px;\"&gt;&lt;/textarea&gt;\n&lt;/div&gt;\n\n&lt;button type=\"submit\" style=\"background: #22D3EE; color: #001A33; padding: 10px 20px; border: none; font-weight: bold; border-radius: 4px; cursor: pointer;\"&gt;Gönder&lt;/button&gt;"
+  },
+  {
+    "objectID": "dernek.html",
+    "href": "dernek.html",
+    "title": "İ. Kayra Orman",
+    "section": "",
+    "text": "Diji depo"
+  },
+  {
+    "objectID": "galeri.html",
+    "href": "galeri.html",
+    "title": "İ. Kayra Orman",
+    "section": "",
+    "text": "Diji depo"
+  },
+  {
+    "objectID": "projeler.html",
+    "href": "projeler.html",
+    "title": "İ. Kayra Orman",
+    "section": "",
+    "text": "Diji depo"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "İ. Kayra Orman",
+    "section": "",
+    "text": "Diji depo"
+  }
+]
