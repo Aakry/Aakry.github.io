@@ -11,78 +11,84 @@
 
   <header class="topbar">
     <span class="site-title">YOUR NAME's desktop</span>
-    <div class="controls">
-      <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle dark mode">
-        <span aria-hidden="true">◐</span> Theme
-      </button>
-    </div>
+    <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle dark mode">Theme</button>
   </header>
 
-  <main class="desktop">
+  <main class="desktop" id="desktop">
 
-    <!-- Intro window -->
-    <section class="window window-intro" id="home" aria-labelledby="intro-title">
+    <!-- Desktop icons: each one opens the window with the matching data-window id -->
+    <nav class="icons" aria-label="Desktop icons">
+      <button class="icon" type="button" data-open="about">
+        <span class="icon-img" aria-hidden="true">👤</span>
+        <span class="icon-label">about</span>
+      </button>
+      <button class="icon" type="button" data-open="projects">
+        <span class="icon-img" aria-hidden="true">🗂️</span>
+        <span class="icon-label">projects</span>
+      </button>
+      <button class="icon" type="button" data-open="links">
+        <span class="icon-img" aria-hidden="true">🔗</span>
+        <span class="icon-label">links</span>
+      </button>
+      <button class="icon" type="button" data-open="faq">
+        <span class="icon-img" aria-hidden="true">❓</span>
+        <span class="icon-label">faq</span>
+      </button>
+      <button class="icon" type="button" data-open="contact">
+        <span class="icon-img" aria-hidden="true">✉️</span>
+        <span class="icon-label">contact</span>
+      </button>
+    </nav>
+
+    <!-- Intro window: open by default -->
+    <section class="window" id="win-intro" data-id="intro" style="top: 40px; left: 240px;" aria-labelledby="intro-title">
       <div class="window-bar">
         <span class="window-title">home.txt</span>
+        <button class="close-btn" type="button" aria-label="Close window">×</button>
       </div>
       <div class="window-body">
         <h1 id="intro-title">Hi, I'm YOUR NAME</h1>
         <p class="subtitle">YOUR ROLE, e.g. illustrator and developer</p>
-        <p>
-          Replace this with a short introduction. Two or three sentences about
-          what you do and what you care about.
-        </p>
-        <p><a class="btn" href="#contact">Get in touch</a></p>
+        <p>Replace this with a short introduction. Two or three sentences about what you do.</p>
+        <p><button class="btn" type="button" data-open="contact">Get in touch</button></p>
       </div>
     </section>
 
-    <!-- About window -->
-    <section class="window" id="about" aria-labelledby="about-title">
+    <!-- About -->
+    <section class="window" id="win-about" data-id="about" style="top: 80px; left: 300px;" hidden aria-labelledby="about-title">
       <div class="window-bar">
         <span class="window-title">about.txt</span>
+        <button class="close-btn" type="button" aria-label="Close window">×</button>
       </div>
       <div class="window-body">
         <h2 id="about-title">About</h2>
-        <p>
-          Tell visitors who you are, where you're based, and what kind of work
-          you're looking for. Keep it short and personal.
-        </p>
+        <p>Tell visitors who you are, where you're based, and what kind of work you're looking for.</p>
         <h3>Tools</h3>
         <ul class="tag-list">
           <li>Tool one</li>
           <li>Tool two</li>
           <li>Tool three</li>
         </ul>
-        <h3>Interests</h3>
-        <ul class="tag-list">
-          <li>Interest one</li>
-          <li>Interest two</li>
-        </ul>
       </div>
     </section>
 
-    <!-- Projects / gallery window -->
-    <section class="window" id="projects" aria-labelledby="projects-title">
+    <!-- Projects -->
+    <section class="window" id="win-projects" data-id="projects" style="top: 120px; left: 360px;" hidden aria-labelledby="projects-title">
       <div class="window-bar">
         <span class="window-title">projects</span>
+        <button class="close-btn" type="button" aria-label="Close window">×</button>
       </div>
       <div class="window-body">
         <h2 id="projects-title">Projects</h2>
         <div class="grid">
           <article class="item">
-            <div class="thumb" role="img" aria-label="Project one thumbnail placeholder">Image</div>
+            <div class="thumb" role="img" aria-label="Project one image placeholder">Image</div>
             <h3>Project title</h3>
             <p>One line describing the project.</p>
             <a href="#">View project</a>
           </article>
           <article class="item">
-            <div class="thumb" role="img" aria-label="Project two thumbnail placeholder">Image</div>
-            <h3>Project title</h3>
-            <p>One line describing the project.</p>
-            <a href="#">View project</a>
-          </article>
-          <article class="item">
-            <div class="thumb" role="img" aria-label="Project three thumbnail placeholder">Image</div>
+            <div class="thumb" role="img" aria-label="Project two image placeholder">Image</div>
             <h3>Project title</h3>
             <p>One line describing the project.</p>
             <a href="#">View project</a>
@@ -91,10 +97,11 @@
       </div>
     </section>
 
-    <!-- Links window -->
-    <section class="window" id="links" aria-labelledby="links-title">
+    <!-- Links -->
+    <section class="window" id="win-links" data-id="links" style="top: 160px; left: 420px;" hidden aria-labelledby="links-title">
       <div class="window-bar">
         <span class="window-title">links</span>
+        <button class="close-btn" type="button" aria-label="Close window">×</button>
       </div>
       <div class="window-body">
         <h2 id="links-title">Links</h2>
@@ -106,10 +113,11 @@
       </div>
     </section>
 
-    <!-- FAQ window -->
-    <section class="window" id="faq" aria-labelledby="faq-title">
+    <!-- FAQ -->
+    <section class="window" id="win-faq" data-id="faq" style="top: 200px; left: 480px;" hidden aria-labelledby="faq-title">
       <div class="window-bar">
         <span class="window-title">faq</span>
+        <button class="close-btn" type="button" aria-label="Close window">×</button>
       </div>
       <div class="window-body">
         <h2 id="faq-title">FAQ</h2>
@@ -124,10 +132,11 @@
       </div>
     </section>
 
-    <!-- Contact window -->
-    <section class="window" id="contact" aria-labelledby="contact-title">
+    <!-- Contact -->
+    <section class="window" id="win-contact" data-id="contact" style="top: 240px; left: 540px;" hidden aria-labelledby="contact-title">
       <div class="window-bar">
         <span class="window-title">contact</span>
+        <button class="close-btn" type="button" aria-label="Close window">×</button>
       </div>
       <div class="window-body">
         <h2 id="contact-title">Contact</h2>
