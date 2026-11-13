@@ -14,7 +14,7 @@
     <button id="theme-toggle" class="icon-btn" type="button" data-en="Theme" data-tr="Tema">Theme</button>
   </div>
 
-  <main class="detail">
+  <main class="detail food-desk" id="desktop">
     <p><a class="back-link" href="index.html" data-en="back to home" data-tr="ana sayfaya dön">back to home</a></p>
 
     <header class="detail-header">
@@ -22,110 +22,199 @@
       <p data-en="this page has foods cooked and/or tasted by me." data-tr="bu sayfada benim yaptığım ve/veya tattığım yemekler var.">this page has foods cooked and/or tasted by me.</p>
     </header>
 
-    <!-- SECTION 1: cooked by someone else -->
-    <section class="food-section" aria-labelledby="by-others">
-      <h2 id="by-others">cooked by someone else</h2>
+    <!-- View switch: grid or list. Applies to both sections. -->
+    <div class="view-switch" role="group" aria-label="View">
+      <span class="view-label">view</span>
+      <div class="seg">
+        <button class="seg-btn" type="button" data-view="grid" aria-pressed="true">grid</button>
+        <button class="seg-btn" type="button" data-view="list" aria-pressed="false">list</button>
+      </div>
+    </div>
 
-      <details class="food">
-        <summary>Lahmacun</summary>
-        <figure class="food-hero">
-          <img src="images/foodiko/lahmacun.jpg" alt="Lahmacun rolled with parsley and lemon" width="800" height="400" onerror="this.style.display='none'">
-          <figcaption>Lahmacun</figcaption>
-        </figure>
-        <div class="food-body">
-          <p><strong>Cooked by:</strong> the local place near home</p>
-          <p><strong>Concept:</strong> thin, crisp, and rolled with parsley, onion, and lemon. Eaten standing up.</p>
-          <p><strong>Tasting notes:</strong> crunchy edge, juicy minced meat, fresh herbs.</p>
-          <p><strong>Churn ideas:</strong> ask what the dough is made with, or try the spicy version next time.</p>
-          <p><strong>Photo ideas:</strong> rolled wrap cut in half, lemon squeezed over it.</p>
-          <p><strong>Rating:</strong> 5/5 (keep)</p>
-        </div>
-      </details>
-
-      <details class="food">
-        <summary>Ramen at a friend's place</summary>
-        <figure class="food-hero">
-          <img src="images/foodiko/ramen.jpg" alt="Bowl of ramen with soft egg" width="800" height="400" onerror="this.style.display='none'">
-          <figcaption>Ramen at a friend's</figcaption>
-        </figure>
-        <div class="food-body">
-          <p><strong>Cooked by:</strong> a friend, from scratch</p>
-          <p><strong>Concept:</strong> a long broth that took most of the afternoon. Soft egg, green onion, and a lot of patience.</p>
-          <p><strong>Tasting notes:</strong> rich broth, the egg was perfect, noodles a bit too soft.</p>
-          <p><strong>Churn ideas:</strong> ask for the broth recipe, try making the egg at home first.</p>
-          <p><strong>Photo ideas:</strong> the egg cut in half, chopsticks lifting noodles.</p>
-          <p><strong>Rating:</strong> 4/5 (keep)</p>
-        </div>
-      </details>
-
-      <details class="food">
-        <summary>Mom's börek</summary>
-        <figure class="food-hero">
-          <img src="images/foodiko/borek.jpg" alt="Golden börek on a plate" width="800" height="400" onerror="this.style.display='none'">
-          <figcaption>Mom's börek</figcaption>
-        </figure>
-        <div class="food-body">
-          <p><strong>Cooked by:</strong> my mom</p>
-          <p><strong>Concept:</strong> layered yufka with cheese and parsley, baked until golden. A weekend tradition.</p>
-          <p><strong>Tasting notes:</strong> flaky, salty cheese, the edges are the best part.</p>
-          <p><strong>Churn ideas:</strong> ask her for the exact cheese ratio and write it down.</p>
-          <p><strong>Photo ideas:</strong> a slice pulled up to show the layers, tea next to it.</p>
-          <p><strong>Rating:</strong> 5/5 (keep forever)</p>
-        </div>
-      </details>
-    </section>
-
-    <!-- SECTION 2: cooked by me -->
+    <!-- SECTION 1: cooked by me -->
     <section class="food-section" aria-labelledby="by-me">
       <h2 id="by-me">cooked by me</h2>
+      <div class="food-grid">
 
-      <details class="food">
-        <summary>Menemen</summary>
-        <figure class="food-hero">
-          <img src="images/foodiko/menemen.jpg" alt="Menemen in a pan" width="800" height="400" onerror="this.style.display='none'">
-          <figcaption>Menemen</figcaption>
-        </figure>
-        <div class="food-body">
-          <p><strong>Type:</strong> breakfast, eggs, quick</p>
-          <p><strong>Concept:</strong> the "Sunday morning" dish. Pan-cooked tomato and pepper, eggs scrambled soft, served straight from the pan with bread.</p>
-          <p><strong>Tasting notes:</strong> sweet tomato, a little heat, soft eggs. Best when the eggs are still loose.</p>
-          <p><strong>Churn ideas:</strong> add feta, try chili flakes, make a spicy version, or serve in a small cast iron pan for a photo.</p>
-          <p><strong>Photo ideas:</strong> overhead shot, steam rising, a spoon in frame, bread torn beside it.</p>
-          <p><strong>Rating:</strong> 4/5 (keep)</p>
-        </div>
-      </details>
+        <button class="food-card" type="button" data-open="menemen">
+          <img src="images/foodiko/menemen.jpg" alt="Menemen in a pan" width="400" height="220" onerror="this.style.display='none'">
+          <span class="food-card-text">
+            <span class="card-place">Home kitchen</span>
+            <span class="card-food">Menemen</span>
+            <span class="card-tag">cooked by me</span>
+          </span>
+        </button>
 
-      <details class="food">
-        <summary>Mercimek çorbası (lentil soup)</summary>
-        <figure class="food-hero">
-          <img src="images/foodiko/lentil-soup.jpg" alt="Lentil soup in a bowl" width="800" height="400" onerror="this.style.display='none'">
-          <figcaption>Mercimek çorbası</figcaption>
-        </figure>
-        <div class="food-body">
-          <p><strong>Type:</strong> soup, cheap, weeknight</p>
-          <p><strong>Concept:</strong> the comfort food that fixes a bad day. Red lentils, onion, carrot, and a squeeze of lemon at the end.</p>
-          <p><strong>Tasting notes:</strong> earthy, slightly sweet from the carrot, bright with lemon. Mint butter on top works well.</p>
-          <p><strong>Churn ideas:</strong> blend it smooth, add cumin and paprika, or serve with crispy bread croutons.</p>
-          <p><strong>Photo ideas:</strong> close shot of the steam, lemon wedge on the side, a dark spoon for contrast.</p>
-          <p><strong>Rating:</strong> 4/5 (keep)</p>
-        </div>
-      </details>
+        <button class="food-card" type="button" data-open="lentil">
+          <img src="images/foodiko/lentil-soup.jpg" alt="Lentil soup in a bowl" width="400" height="220" onerror="this.style.display='none'">
+          <span class="food-card-text">
+            <span class="card-place">Home kitchen</span>
+            <span class="card-food">Mercimek çorbası</span>
+            <span class="card-tag">cooked by me</span>
+          </span>
+        </button>
 
-      <details class="food">
-        <summary>Homemade pizza</summary>
-        <figure class="food-hero">
-          <img src="images/foodiko/homemade-pizza.jpg" alt="Homemade pizza on a board" width="800" height="400" onerror="this.style.display='none'">
-          <figcaption>Homemade pizza</figcaption>
-        </figure>
-        <div class="food-body">
-          <p><strong>Type:</strong> dinner, project, friends</p>
-          <p><strong>Concept:</strong> the "one more try" food. A long dough rest, a very hot oven, and whatever toppings are in the fridge.</p>
-          <p><strong>Tasting notes:</strong> airy crust with a bit of char, tomato sauce that is not too thick.</p>
-          <p><strong>Churn ideas:</strong> try a 24 hour dough, a white pizza, or a "fridge clean-out" pizza night.</p>
-          <p><strong>Photo ideas:</strong> cheese pull, flour dusted on the board, a half-eaten slice.</p>
-          <p><strong>Rating:</strong> 3/5 (churn: dough needs work)</p>
+        <button class="food-card" type="button" data-open="pizza">
+          <img src="images/foodiko/homemade-pizza.jpg" alt="Homemade pizza on a board" width="400" height="220" onerror="this.style.display='none'">
+          <span class="food-card-text">
+            <span class="card-place">Home kitchen</span>
+            <span class="card-food">Homemade pizza</span>
+            <span class="card-tag">cooked by me</span>
+          </span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: cooked by someone else -->
+    <section class="food-section" aria-labelledby="by-others">
+      <h2 id="by-others">cooked by someone else</h2>
+      <div class="food-grid">
+
+        <button class="food-card" type="button" data-open="lahmacun">
+          <img src="images/foodiko/lahmacun.jpg" alt="Lahmacun rolled with parsley and lemon" width="400" height="220" onerror="this.style.display='none'">
+          <span class="food-card-text">
+            <span class="card-place">Local place near home</span>
+            <span class="card-food">Lahmacun</span>
+            <span class="card-tag">cooked by someone else</span>
+          </span>
+        </button>
+
+        <button class="food-card" type="button" data-open="ramen">
+          <img src="images/foodiko/ramen.jpg" alt="Bowl of ramen with soft egg" width="400" height="220" onerror="this.style.display='none'">
+          <span class="food-card-text">
+            <span class="card-place">Friend's kitchen</span>
+            <span class="card-food">Ramen</span>
+            <span class="card-tag">cooked by someone else</span>
+          </span>
+        </button>
+
+        <button class="food-card" type="button" data-open="borek">
+          <img src="images/foodiko/borek.jpg" alt="Golden börek on a plate" width="400" height="220" onerror="this.style.display='none'">
+          <span class="food-card-text">
+            <span class="card-place">Mom's kitchen</span>
+            <span class="card-food">Mom's börek</span>
+            <span class="card-tag">cooked by someone else</span>
+          </span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- POP-UP WINDOWS: one per food. Opened by the cards above. -->
+
+    <section class="window food-win" data-id="menemen" hidden aria-labelledby="w-menemen">
+      <div class="window-bar">
+        <span class="window-title">menemen</span>
+        <button class="close-btn" type="button" aria-label="Close window">×</button>
+      </div>
+      <div class="window-body">
+        <h2 id="w-menemen"><span class="card-place">Home kitchen</span> Menemen</h2>
+        <div class="gallery">
+          <figure><img src="images/foodiko/menemen.jpg" alt="Menemen main" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/menemen-2.jpg" alt="Menemen detail" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/menemen-3.jpg" alt="Menemen plated" onerror="this.parentNode.style.display='none'"></figure>
         </div>
-      </details>
+        <h3>my comments</h3>
+        <p>The eggs are best when they are still loose. Next time I want to try feta and less pepper.</p>
+        <h3>other notes</h3>
+        <p class="muted">Add more photos, the recipe idea, or a short memory here.</p>
+      </div>
+    </section>
+
+    <section class="window food-win" data-id="lentil" hidden aria-labelledby="w-lentil">
+      <div class="window-bar">
+        <span class="window-title">mercimek çorbası</span>
+        <button class="close-btn" type="button" aria-label="Close window">×</button>
+      </div>
+      <div class="window-body">
+        <h2 id="w-lentil"><span class="card-place">Home kitchen</span> Mercimek çorbası</h2>
+        <div class="gallery">
+          <figure><img src="images/foodiko/lentil-soup.jpg" alt="Lentil soup main" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/lentil-soup-2.jpg" alt="Lentil soup detail" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/lentil-soup-3.jpg" alt="Lentil soup with lemon" onerror="this.parentNode.style.display='none'"></figure>
+        </div>
+        <h3>my comments</h3>
+        <p>The lemon at the end is not optional. Mint butter on top is a good upgrade.</p>
+        <h3>other notes</h3>
+        <p class="muted">Add more photos, the recipe idea, or a short memory here.</p>
+      </div>
+    </section>
+
+    <section class="window food-win" data-id="pizza" hidden aria-labelledby="w-pizza">
+      <div class="window-bar">
+        <span class="window-title">homemade pizza</span>
+        <button class="close-btn" type="button" aria-label="Close window">×</button>
+      </div>
+      <div class="window-body">
+        <h2 id="w-pizza"><span class="card-place">Home kitchen</span> Homemade pizza</h2>
+        <div class="gallery">
+          <figure><img src="images/foodiko/homemade-pizza.jpg" alt="Pizza main" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/homemade-pizza-2.jpg" alt="Pizza dough" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/homemade-pizza-3.jpg" alt="Pizza slice" onerror="this.parentNode.style.display='none'"></figure>
+        </div>
+        <h3>my comments</h3>
+        <p>The dough needs a longer rest. Next time I want to try a 24 hour dough.</p>
+        <h3>other notes</h3>
+        <p class="muted">Add more photos, the recipe idea, or a short memory here.</p>
+      </div>
+    </section>
+
+    <section class="window food-win" data-id="lahmacun" hidden aria-labelledby="w-lahmacun">
+      <div class="window-bar">
+        <span class="window-title">lahmacun</span>
+        <button class="close-btn" type="button" aria-label="Close window">×</button>
+      </div>
+      <div class="window-body">
+        <h2 id="w-lahmacun"><span class="card-place">Local place near home</span> Lahmacun</h2>
+        <div class="gallery">
+          <figure><img src="images/foodiko/lahmacun.jpg" alt="Lahmacun main" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/lahmacun-2.jpg" alt="Lahmacun rolled" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/lahmacun-3.jpg" alt="Lahmacun with lemon" onerror="this.parentNode.style.display='none'"></figure>
+        </div>
+        <h3>my comments</h3>
+        <p>The crispy edge is the best part. Ask for extra lemon.</p>
+        <h3>other notes</h3>
+        <p class="muted">Add more photos, the place details, or a short memory here.</p>
+      </div>
+    </section>
+
+    <section class="window food-win" data-id="ramen" hidden aria-labelledby="w-ramen">
+      <div class="window-bar">
+        <span class="window-title">ramen</span>
+        <button class="close-btn" type="button" aria-label="Close window">×</button>
+      </div>
+      <div class="window-body">
+        <h2 id="w-ramen"><span class="card-place">Friend's kitchen</span> Ramen</h2>
+        <div class="gallery">
+          <figure><img src="images/foodiko/ramen.jpg" alt="Ramen main" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/ramen-2.jpg" alt="Ramen broth" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/ramen-3.jpg" alt="Ramen egg" onerror="this.parentNode.style.display='none'"></figure>
+        </div>
+        <h3>my comments</h3>
+        <p>The broth was rich and the egg was perfect. The noodles were a bit too soft.</p>
+        <h3>other notes</h3>
+        <p class="muted">Add more photos, the recipe idea, or a short memory here.</p>
+      </div>
+    </section>
+
+    <section class="window food-win" data-id="borek" hidden aria-labelledby="w-borek">
+      <div class="window-bar">
+        <span class="window-title">mom's börek</span>
+        <button class="close-btn" type="button" aria-label="Close window">×</button>
+      </div>
+      <div class="window-body">
+        <h2 id="w-borek"><span class="card-place">Mom's kitchen</span> Mom's börek</h2>
+        <div class="gallery">
+          <figure><img src="images/foodiko/borek.jpg" alt="Börek main" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/borek-2.jpg" alt="Börek slice" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/borek-3.jpg" alt="Börek with tea" onerror="this.parentNode.style.display='none'"></figure>
+        </div>
+        <h3>my comments</h3>
+        <p>The edges are the best part. I need to ask her for the exact cheese ratio and write it down.</p>
+        <h3>other notes</h3>
+        <p class="muted">Add more photos, the recipe idea, or a short memory here.</p>
+      </div>
     </section>
 
   </main>
@@ -135,5 +224,21 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // Grid / list switch: changes both sections at once
+    (function () {
+      var buttons = document.querySelectorAll(".seg-btn");
+      var grids = document.querySelectorAll(".food-grid");
+      buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var list = btn.getAttribute("data-view") === "list";
+          grids.forEach(function (g) { g.classList.toggle("is-list", list); });
+          buttons.forEach(function (b) {
+            b.setAttribute("aria-pressed", b === btn ? "true" : "false");
+          });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
