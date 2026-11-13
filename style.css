@@ -368,3 +368,85 @@ summary {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+
+/* ===== Page boxes with tiny thumbnails ===== */
+.page-box {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.page-thumb {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  background: var(--surface);
+}
+
+.page-text { display: block; min-width: 0; }
+
+.page-name {
+  display: block;
+  font-family: var(--font-ui);
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.15rem;
+}
+
+.page-desc {
+  display: block;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Link inside a page window that opens the full page in a new tab */
+.full-link {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+}
+
+/* ===== Full page (opens in its own tab) ===== */
+.detail {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 2rem;
+}
+
+.back-link {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+}
+
+.detail-header {
+  border-bottom: 2px solid var(--border);
+  margin: 1.2rem 0 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.detail-header h1 {
+  font-family: var(--font-ui);
+  font-size: 2rem;
+  margin: 0 0 0.4rem;
+}
+
+.detail-header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.detail-body {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  min-height: 240px;
+}
+
+@media (max-width: 720px) {
+  .detail { padding: 4rem 1rem 2rem; }
+  .detail-header h1 { font-size: 1.6rem; }
+}

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="İ. Kayra Orman, electrical engineer and control engineering student">
+  <meta name="description" content="İ. Kayra Orman, electrical and control engineer, also a cook">
   <title>İ. Kayra Orman</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -48,11 +48,10 @@
           <span data-en="hi! i'm" data-tr="merhaba! ben">hi! i'm</span>
           <span class="accent" data-en="Kayra" data-tr="Kayra">Kayra</span>
         </h1>
-        <p class="subtitle" data-en="electrical engineer, control engineering student, and cook" data-tr="elektrik mühendisi, kontrol mühendisliği öğrencisi ve aşçı">electrical engineer, control engineering student, and cook</p>
+        <p class="subtitle" data-en="electrical and control (soon) engineer, also cook (okayish)" data-tr="elektrik ve kontrol (yakında) mühendisi, ayrıca vasatın bir tık üstü aşçı">electrical and control (soon) engineer, also cook (okayish)</p>
         <p data-en="I studied electrical engineering at ITU. I'm now working on a bachelor's in control engineering, and I'm also enrolled in an electrical engineering master's program. While I was at ITU, I also studied cooking at Istanbul Bilgi University." data-tr="İTÜ'de elektrik mühendisliği okudum. Şu an kontrol mühendisliği lisans programında okuyorum ve elektrik mühendisliği yüksek lisansına da kayıtlıyım. İTÜ'deyken aynı dönemde İstanbul Bilgi Üniversitesi'nde yemek eğitimi de aldım.">I studied electrical engineering at ITU. I'm now working on a bachelor's in control engineering, and I'm also enrolled in an electrical engineering master's program. While I was at ITU, I also studied cooking at Istanbul Bilgi University.</p>
         <p class="home-actions">
           <button class="btn" type="button" data-open="faq-contact" data-en="get in touch" data-tr="iletişime geç">get in touch</button>
-          <a class="btn btn-alt" href="https://www.linkedin.com/in/ilkerkayraorman/" target="_blank" rel="noopener">LinkedIn</a>
         </p>
       </div>
     </section>
@@ -76,7 +75,7 @@
       </div>
     </section>
 
-    <!-- PAGES: a scrollable list of boxes. Each box opens its own page window. -->
+    <!-- PAGES: scrollable list. Each box has a tiny picture and opens its page window. -->
     <section class="window pos-right" data-id="pages" hidden aria-labelledby="pages-title">
       <div class="window-bar">
         <span class="window-title" data-en="pages" data-tr="sayfalar">pages</span>
@@ -86,34 +85,52 @@
         <h2 id="pages-title" data-en="Pages" data-tr="Sayfalar">Pages</h2>
         <div class="box-scroll">
           <button class="page-box" type="button" data-open="foodiko">
-            <h3 data-en="FOODIKO" data-tr="FOODIKO">FOODIKO</h3>
-            <p data-en="this page has foods cooked and/or tasted by me." data-tr="bu sayfada benim yaptığım ve/veya tattığım yemekler var.">this page has foods cooked and/or tasted by me.</p>
+            <img class="page-thumb" src="images/foodiko.jpg" alt="" width="56" height="56" onerror="this.style.display='none'">
+            <span class="page-text">
+              <span class="page-name">FOODIKO</span>
+              <span class="page-desc" data-en="this page has foods cooked and/or tasted by me." data-tr="bu sayfada benim yaptığım ve/veya tattığım yemekler var.">this page has foods cooked and/or tasted by me.</span>
+            </span>
           </button>
           <button class="page-box" type="button" data-open="pictures">
-            <h3 data-en="PICTURES" data-tr="FOTOĞRAFLAR">PICTURES</h3>
-            <p data-en="pictures possibly i took." data-tr="muhtemelen benim çektiğim fotoğraflar.">pictures possibly i took.</p>
+            <img class="page-thumb" src="images/pictures.jpg" alt="" width="56" height="56" onerror="this.style.display='none'">
+            <span class="page-text">
+              <span class="page-name" data-en="PICTURES" data-tr="FOTOĞRAFLAR">PICTURES</span>
+              <span class="page-desc" data-en="pictures possibly i took." data-tr="muhtemelen benim çektiğim fotoğraflar.">pictures possibly i took.</span>
+            </span>
           </button>
           <button class="page-box" type="button" data-open="technical">
-            <h3 data-en="TECHNICAL STUFF" data-tr="TEKNİK ŞEYLER">TECHNICAL STUFF</h3>
-            <p data-en="its either something cool or something nerd." data-tr="ya havalı ya da nerdçe bir şey.">its either something cool or something nerd.</p>
+            <img class="page-thumb" src="images/technical.jpg" alt="" width="56" height="56" onerror="this.style.display='none'">
+            <span class="page-text">
+              <span class="page-name" data-en="TECHNICAL STUFF" data-tr="TEKNİK ŞEYLER">TECHNICAL STUFF</span>
+              <span class="page-desc" data-en="its either something cool or something nerd." data-tr="ya havalı ya da nerdçe bir şey.">its either something cool or something nerd.</span>
+            </span>
           </button>
           <button class="page-box" type="button" data-open="soon-1">
-            <h3 data-en="COMING SOON" data-tr="YAKINDA">COMING SOON</h3>
-            <p data-en="hopefully on other interests." data-tr="umarım başka ilgi alanlarında.">hopefully on other interests.</p>
+            <img class="page-thumb" src="images/soon-1.jpg" alt="" width="56" height="56" onerror="this.style.display='none'">
+            <span class="page-text">
+              <span class="page-name" data-en="COMING SOON" data-tr="YAKINDA">COMING SOON</span>
+              <span class="page-desc" data-en="hopefully on other interests." data-tr="umarım başka ilgi alanlarında.">hopefully on other interests.</span>
+            </span>
           </button>
           <button class="page-box" type="button" data-open="soon-2">
-            <h3 data-en="COMING SOON" data-tr="YAKINDA">COMING SOON</h3>
-            <p data-en="hopefully on other interests." data-tr="umarım başka ilgi alanlarında.">hopefully on other interests.</p>
+            <img class="page-thumb" src="images/soon-2.jpg" alt="" width="56" height="56" onerror="this.style.display='none'">
+            <span class="page-text">
+              <span class="page-name" data-en="COMING SOON" data-tr="YAKINDA">COMING SOON</span>
+              <span class="page-desc" data-en="hopefully on other interests." data-tr="umarım başka ilgi alanlarında.">hopefully on other interests.</span>
+            </span>
           </button>
           <button class="page-box" type="button" data-open="soon-3">
-            <h3 data-en="COMING SOON" data-tr="YAKINDA">COMING SOON</h3>
-            <p data-en="hopefully on other interests." data-tr="umarım başka ilgi alanlarında.">hopefully on other interests.</p>
+            <img class="page-thumb" src="images/soon-3.jpg" alt="" width="56" height="56" onerror="this.style.display='none'">
+            <span class="page-text">
+              <span class="page-name" data-en="COMING SOON" data-tr="YAKINDA">COMING SOON</span>
+              <span class="page-desc" data-en="hopefully on other interests." data-tr="umarım başka ilgi alanlarında.">hopefully on other interests.</span>
+            </span>
           </button>
         </div>
       </div>
     </section>
 
-    <!-- FOODIKO page -->
+    <!-- FOODIKO page window -->
     <section class="window pos-page" data-id="foodiko" hidden aria-labelledby="foodiko-title">
       <div class="window-bar">
         <span class="window-title">FOODIKO</span>
@@ -123,10 +140,11 @@
         <h2 id="foodiko-title">FOODIKO</h2>
         <p data-en="this page has foods cooked and/or tasted by me." data-tr="bu sayfada benim yaptığım ve/veya tattığım yemekler var.">this page has foods cooked and/or tasted by me.</p>
         <p class="muted" data-en="content coming soon." data-tr="içerik yakında.">content coming soon.</p>
+        <p><a class="full-link" href="foodiko.html" target="_blank" rel="noopener" data-en="open full page" data-tr="tam sayfayı aç">open full page</a></p>
       </div>
     </section>
 
-    <!-- PICTURES page -->
+    <!-- PICTURES page window -->
     <section class="window pos-page" data-id="pictures" hidden aria-labelledby="pictures-title">
       <div class="window-bar">
         <span class="window-title">PICTURES</span>
@@ -136,10 +154,11 @@
         <h2 id="pictures-title" data-en="PICTURES" data-tr="FOTOĞRAFLAR">PICTURES</h2>
         <p data-en="pictures possibly i took." data-tr="muhtemelen benim çektiğim fotoğraflar.">pictures possibly i took.</p>
         <p class="muted" data-en="content coming soon." data-tr="içerik yakında.">content coming soon.</p>
+        <p><a class="full-link" href="pictures.html" target="_blank" rel="noopener" data-en="open full page" data-tr="tam sayfayı aç">open full page</a></p>
       </div>
     </section>
 
-    <!-- TECHNICAL STUFF page -->
+    <!-- TECHNICAL STUFF page window -->
     <section class="window pos-page" data-id="technical" hidden aria-labelledby="technical-title">
       <div class="window-bar">
         <span class="window-title">TECHNICAL STUFF</span>
@@ -149,10 +168,11 @@
         <h2 id="technical-title" data-en="TECHNICAL STUFF" data-tr="TEKNİK ŞEYLER">TECHNICAL STUFF</h2>
         <p data-en="its either something cool or something nerd." data-tr="ya havalı ya da nerdçe bir şey.">its either something cool or something nerd.</p>
         <p class="muted" data-en="content coming soon." data-tr="içerik yakında.">content coming soon.</p>
+        <p><a class="full-link" href="technical.html" target="_blank" rel="noopener" data-en="open full page" data-tr="tam sayfayı aç">open full page</a></p>
       </div>
     </section>
 
-    <!-- Placeholder pages -->
+    <!-- Placeholder page windows -->
     <section class="window pos-page" data-id="soon-1" hidden>
       <div class="window-bar">
         <span class="window-title">COMING SOON</span>
@@ -194,15 +214,12 @@
       </div>
       <div class="window-body">
         <h2 id="links-title" data-en="Links" data-tr="Bağlantılar">Links</h2>
-        <ul class="link-list">
-          <li><a href="https://www.linkedin.com/in/ilkerkayraorman/" target="_blank" rel="noopener">LinkedIn</a></li>
-        </ul>
         <h3 data-en="Funny videos" data-tr="Komik videolar">Funny videos</h3>
         <p class="muted" data-en="coming soon, I'll add my favorite funny videos here." data-tr="yakında, en sevdiğim komik videoları buraya ekleyeceğim.">coming soon, I'll add my favorite funny videos here.</p>
       </div>
     </section>
 
-    <!-- FAQ AND CONTACT (merged) -->
+    <!-- FAQ AND CONTACT -->
     <section class="window pos-right" data-id="faq-contact" hidden aria-labelledby="faq-title">
       <div class="window-bar">
         <span class="window-title" data-en="faq &amp; contact" data-tr="sss ve iletişim">faq &amp; contact</span>
@@ -221,6 +238,7 @@
         <p><a href="mailto:orman20@itu.edu.tr">orman20@itu.edu.tr</a></p>
         <p data-en="For anything else, use" data-tr="Diğer her şey için">For anything else, use</p>
         <p><a href="mailto:ilkerkorman@gmail.com">ilkerkorman@gmail.com</a></p>
+        <p><a href="https://www.linkedin.com/in/ilkerkayraorman/" target="_blank" rel="noopener">LinkedIn</a></p>
       </div>
     </section>
 
