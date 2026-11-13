@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="İ. Kayra Orman, electrical engineer and future control engineer">
+  <meta name="description" content="İ. Kayra Orman, electrical engineer and control engineering student">
   <title>İ. Kayra Orman</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Small controls in the top right: language and theme -->
+  <!-- Top-right controls: language and theme -->
   <div class="controls">
     <button id="lang-toggle" class="icon-btn" type="button" aria-label="Change language">TR</button>
     <button id="theme-toggle" class="icon-btn" type="button" data-en="Theme" data-tr="Tema">Theme</button>
@@ -17,32 +17,28 @@
 
   <main class="desktop" id="desktop">
 
-    <!-- Desktop icons, centered. Each button opens the window whose data-id matches its data-open. -->
+    <!-- Desktop icons, centered. Each opens the window whose data-id matches data-open. -->
     <nav class="icons" aria-label="Desktop icons">
       <button class="icon" type="button" data-open="about">
         <span class="icon-img" aria-hidden="true">👤</span>
         <span class="icon-label" data-en="about" data-tr="hakkımda">about</span>
       </button>
-      <button class="icon" type="button" data-open="projects">
+      <button class="icon" type="button" data-open="pages">
         <span class="icon-img" aria-hidden="true">🗂️</span>
-        <span class="icon-label" data-en="projects" data-tr="projeler">projects</span>
+        <span class="icon-label" data-en="pages" data-tr="sayfalar">pages</span>
       </button>
       <button class="icon" type="button" data-open="links">
         <span class="icon-img" aria-hidden="true">🔗</span>
         <span class="icon-label" data-en="links" data-tr="bağlantılar">links</span>
       </button>
-      <button class="icon" type="button" data-open="faq">
-        <span class="icon-img" aria-hidden="true">❓</span>
-        <span class="icon-label" data-en="faq" data-tr="sss">faq</span>
-      </button>
-      <button class="icon" type="button" data-open="contact">
+      <button class="icon" type="button" data-open="faq-contact">
         <span class="icon-img" aria-hidden="true">✉️</span>
-        <span class="icon-label" data-en="contact" data-tr="iletişim">contact</span>
+        <span class="icon-label" data-en="faq &amp; contact" data-tr="sss ve iletişim">faq &amp; contact</span>
       </button>
     </nav>
 
-    <!-- HOME window: open by default, cannot be closed. Its close button only shows a notice. -->
-    <section class="window" id="win-home" data-id="home" data-locked="true" aria-labelledby="home-title">
+    <!-- HOME: open at startup, cannot be closed. Its close button only shows a notice. -->
+    <section class="window win-home" id="win-home" data-id="home" data-locked="true" aria-labelledby="home-title">
       <div class="window-bar">
         <span class="window-title">home</span>
         <button class="close-btn" type="button" aria-label="Close window" data-en-label="Close window" data-tr-label="Pencereyi kapat">×</button>
@@ -52,56 +48,146 @@
           <span data-en="hi! i'm" data-tr="merhaba! ben">hi! i'm</span>
           <span class="accent" data-en="Kayra" data-tr="Kayra">Kayra</span>
         </h1>
-        <p class="subtitle" data-en="electrical engineer, soon control engineer, and cook" data-tr="elektrik mühendisi, yakında kontrol mühendisi ve aşçı">electrical engineer, soon control engineer, and cook</p>
-        <p data-en="I studied electrical engineering at ITU and I'm moving toward control engineering. I also love cooking, and I'm usually up for trying almost anything." data-tr="İTÜ'de elektrik mühendisliği okudum ve kontrol mühendisliğine doğru ilerliyorum. Yemek yapmayı da çok severim; genelde hemen hemen her şeyi denemeye açığımdır.">I studied electrical engineering at ITU and I'm moving toward control engineering. I also love cooking, and I'm usually up for trying almost anything.</p>
-        <p><button class="btn" type="button" data-open="contact" data-en="get in touch" data-tr="iletişime geç">get in touch</button></p>
+        <p class="subtitle" data-en="electrical engineer, control engineering student, and cook" data-tr="elektrik mühendisi, kontrol mühendisliği öğrencisi ve aşçı">electrical engineer, control engineering student, and cook</p>
+        <p data-en="I studied electrical engineering at ITU. I'm now working on a bachelor's in control engineering, and I'm also enrolled in an electrical engineering master's program. While I was at ITU, I also studied cooking at Istanbul Bilgi University." data-tr="İTÜ'de elektrik mühendisliği okudum. Şu an kontrol mühendisliği lisans programında okuyorum ve elektrik mühendisliği yüksek lisansına da kayıtlıyım. İTÜ'deyken aynı dönemde İstanbul Bilgi Üniversitesi'nde yemek eğitimi de aldım.">I studied electrical engineering at ITU. I'm now working on a bachelor's in control engineering, and I'm also enrolled in an electrical engineering master's program. While I was at ITU, I also studied cooking at Istanbul Bilgi University.</p>
+        <p class="home-actions">
+          <button class="btn" type="button" data-open="faq-contact" data-en="get in touch" data-tr="iletişime geç">get in touch</button>
+          <a class="btn btn-alt" href="https://www.linkedin.com/in/ilkerkayraorman/" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section class="window" id="win-about" data-id="about" hidden aria-labelledby="about-title">
+    <section class="window pos-right" data-id="about" hidden aria-labelledby="about-title">
       <div class="window-bar">
         <span class="window-title" data-en="about" data-tr="hakkımda">about</span>
         <button class="close-btn" type="button" aria-label="Close window" data-en-label="Close window" data-tr-label="Pencereyi kapat">×</button>
       </div>
       <div class="window-body">
         <h2 id="about-title" data-en="About me" data-tr="Hakkımda">About me</h2>
-        <p data-en="I'm an electrical engineer, and I'm moving toward control engineering. I enjoy learning new things and most hobbies, and cooking is one of my favorites." data-tr="Elektrik mühendisiyim ve kontrol mühendisliğine doğru ilerliyorum. Yeni şeyler öğrenmeyi ve çoğu hobiyi severim; yemek yapmak en sevdiklerimden biri.">I'm an electrical engineer, and I'm moving toward control engineering. I enjoy learning new things and most hobbies, and cooking is one of my favorites.</p>
+        <p data-en="I'm an electrical engineer moving toward control engineering. I like working with my hands and figuring out how things work." data-tr="Elektrik mühendisiyim ve kontrol mühendisliğine doğru ilerliyorum. Ellerimle çalışmayı ve şeylerin nasıl çalıştığını anlamayı severim.">I'm an electrical engineer moving toward control engineering. I like working with my hands and figuring out how things work.</p>
         <h3 data-en="Interests" data-tr="İlgi alanları">Interests</h3>
         <ul class="tag-list">
-          <li data-en="cooking" data-tr="yemek">cooking</li>
-          <li data-en="electrical engineering" data-tr="elektrik mühendisliği">electrical engineering</li>
-          <li data-en="control systems" data-tr="kontrol sistemleri">control systems</li>
-          <li data-en="learning new things" data-tr="yeni şeyler öğrenmek">learning new things</li>
+          <li data-en="cooking" data-tr="yemek yapmak">cooking</li>
+          <li data-en="fixing broken stuff" data-tr="bozuk şeyleri tamir etmek">fixing broken stuff</li>
+          <li data-en="saving potentially working things from the unfixable pile" data-tr="tamir edilemez yığından çalışabilecek şeyleri kurtarmak">saving potentially working things from the unfixable pile</li>
+          <li data-en="sewing (hopefully)" data-tr="dikiş (umarım)">sewing (hopefully)</li>
         </ul>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="window" id="win-projects" data-id="projects" hidden aria-labelledby="projects-title">
+    <!-- PAGES: a scrollable list of boxes. Each box opens its own page window. -->
+    <section class="window pos-right" data-id="pages" hidden aria-labelledby="pages-title">
       <div class="window-bar">
-        <span class="window-title" data-en="projects" data-tr="projeler">projects</span>
+        <span class="window-title" data-en="pages" data-tr="sayfalar">pages</span>
         <button class="close-btn" type="button" aria-label="Close window" data-en-label="Close window" data-tr-label="Pencereyi kapat">×</button>
       </div>
       <div class="window-body">
-        <h2 id="projects-title" data-en="Projects" data-tr="Projeler">Projects</h2>
-        <div class="grid">
-          <article class="item">
-            <div class="thumb" role="img" data-en-label="Project image placeholder" data-tr-label="Proje görseli yeri" aria-label="Project image placeholder" data-en="Image" data-tr="Görsel">Image</div>
-            <h3 data-en="Project title" data-tr="Proje adı">Project title</h3>
-            <p data-en="One line describing the project." data-tr="Projeyi anlatan tek bir cümle.">One line describing the project.</p>
-          </article>
-          <article class="item">
-            <div class="thumb" role="img" data-en-label="Project image placeholder" data-tr-label="Proje görseli yeri" aria-label="Project image placeholder" data-en="Image" data-tr="Görsel">Image</div>
-            <h3 data-en="Project title" data-tr="Proje adı">Project title</h3>
-            <p data-en="One line describing the project." data-tr="Projeyi anlatan tek bir cümle.">One line describing the project.</p>
-          </article>
+        <h2 id="pages-title" data-en="Pages" data-tr="Sayfalar">Pages</h2>
+        <div class="box-scroll">
+          <button class="page-box" type="button" data-open="foodiko">
+            <h3 data-en="FOODIKO" data-tr="FOODIKO">FOODIKO</h3>
+            <p data-en="this page has foods cooked and/or tasted by me." data-tr="bu sayfada benim yaptığım ve/veya tattığım yemekler var.">this page has foods cooked and/or tasted by me.</p>
+          </button>
+          <button class="page-box" type="button" data-open="pictures">
+            <h3 data-en="PICTURES" data-tr="FOTOĞRAFLAR">PICTURES</h3>
+            <p data-en="pictures possibly i took." data-tr="muhtemelen benim çektiğim fotoğraflar.">pictures possibly i took.</p>
+          </button>
+          <button class="page-box" type="button" data-open="technical">
+            <h3 data-en="TECHNICAL STUFF" data-tr="TEKNİK ŞEYLER">TECHNICAL STUFF</h3>
+            <p data-en="its either something cool or something nerd." data-tr="ya havalı ya da nerdçe bir şey.">its either something cool or something nerd.</p>
+          </button>
+          <button class="page-box" type="button" data-open="soon-1">
+            <h3 data-en="COMING SOON" data-tr="YAKINDA">COMING SOON</h3>
+            <p data-en="hopefully on other interests." data-tr="umarım başka ilgi alanlarında.">hopefully on other interests.</p>
+          </button>
+          <button class="page-box" type="button" data-open="soon-2">
+            <h3 data-en="COMING SOON" data-tr="YAKINDA">COMING SOON</h3>
+            <p data-en="hopefully on other interests." data-tr="umarım başka ilgi alanlarında.">hopefully on other interests.</p>
+          </button>
+          <button class="page-box" type="button" data-open="soon-3">
+            <h3 data-en="COMING SOON" data-tr="YAKINDA">COMING SOON</h3>
+            <p data-en="hopefully on other interests." data-tr="umarım başka ilgi alanlarında.">hopefully on other interests.</p>
+          </button>
         </div>
       </div>
     </section>
 
+    <!-- FOODIKO page -->
+    <section class="window pos-page" data-id="foodiko" hidden aria-labelledby="foodiko-title">
+      <div class="window-bar">
+        <span class="window-title">FOODIKO</span>
+        <button class="close-btn" type="button" aria-label="Close window" data-en-label="Close window" data-tr-label="Pencereyi kapat">×</button>
+      </div>
+      <div class="window-body">
+        <h2 id="foodiko-title">FOODIKO</h2>
+        <p data-en="this page has foods cooked and/or tasted by me." data-tr="bu sayfada benim yaptığım ve/veya tattığım yemekler var.">this page has foods cooked and/or tasted by me.</p>
+        <p class="muted" data-en="content coming soon." data-tr="içerik yakında.">content coming soon.</p>
+      </div>
+    </section>
+
+    <!-- PICTURES page -->
+    <section class="window pos-page" data-id="pictures" hidden aria-labelledby="pictures-title">
+      <div class="window-bar">
+        <span class="window-title">PICTURES</span>
+        <button class="close-btn" type="button" aria-label="Close window" data-en-label="Close window" data-tr-label="Pencereyi kapat">×</button>
+      </div>
+      <div class="window-body">
+        <h2 id="pictures-title" data-en="PICTURES" data-tr="FOTOĞRAFLAR">PICTURES</h2>
+        <p data-en="pictures possibly i took." data-tr="muhtemelen benim çektiğim fotoğraflar.">pictures possibly i took.</p>
+        <p class="muted" data-en="content coming soon." data-tr="içerik yakında.">content coming soon.</p>
+      </div>
+    </section>
+
+    <!-- TECHNICAL STUFF page -->
+    <section class="window pos-page" data-id="technical" hidden aria-labelledby="technical-title">
+      <div class="window-bar">
+        <span class="window-title">TECHNICAL STUFF</span>
+        <button class="close-btn" type="button" aria-label="Close window" data-en-label="Close window" data-tr-label="Pencereyi kapat">×</button>
+      </div>
+      <div class="window-body">
+        <h2 id="technical-title" data-en="TECHNICAL STUFF" data-tr="TEKNİK ŞEYLER">TECHNICAL STUFF</h2>
+        <p data-en="its either something cool or something nerd." data-tr="ya havalı ya da nerdçe bir şey.">its either something cool or something nerd.</p>
+        <p class="muted" data-en="content coming soon." data-tr="içerik yakında.">content coming soon.</p>
+      </div>
+    </section>
+
+    <!-- Placeholder pages -->
+    <section class="window pos-page" data-id="soon-1" hidden>
+      <div class="window-bar">
+        <span class="window-title">COMING SOON</span>
+        <button class="close-btn" type="button" aria-label="Close window" data-en-label="Close window" data-tr-label="Pencereyi kapat">×</button>
+      </div>
+      <div class="window-body">
+        <h2 data-en="COMING SOON" data-tr="YAKINDA">COMING SOON</h2>
+        <p data-en="hopefully on other interests." data-tr="umarım başka ilgi alanlarında.">hopefully on other interests.</p>
+      </div>
+    </section>
+
+    <section class="window pos-page" data-id="soon-2" hidden>
+      <div class="window-bar">
+        <span class="window-title">COMING SOON</span>
+        <button class="close-btn" type="button" aria-label="Close window" data-en-label="Close window" data-tr-label="Pencereyi kapat">×</button>
+      </div>
+      <div class="window-body">
+        <h2 data-en="COMING SOON" data-tr="YAKINDA">COMING SOON</h2>
+        <p data-en="hopefully on other interests." data-tr="umarım başka ilgi alanlarında.">hopefully on other interests.</p>
+      </div>
+    </section>
+
+    <section class="window pos-page" data-id="soon-3" hidden>
+      <div class="window-bar">
+        <span class="window-title">COMING SOON</span>
+        <button class="close-btn" type="button" aria-label="Close window" data-en-label="Close window" data-tr-label="Pencereyi kapat">×</button>
+      </div>
+      <div class="window-body">
+        <h2 data-en="COMING SOON" data-tr="YAKINDA">COMING SOON</h2>
+        <p data-en="hopefully on other interests." data-tr="umarım başka ilgi alanlarında.">hopefully on other interests.</p>
+      </div>
+    </section>
+
     <!-- LINKS -->
-    <section class="window" id="win-links" data-id="links" hidden aria-labelledby="links-title">
+    <section class="window pos-right" data-id="links" hidden aria-labelledby="links-title">
       <div class="window-bar">
         <span class="window-title" data-en="links" data-tr="bağlantılar">links</span>
         <button class="close-btn" type="button" aria-label="Close window" data-en-label="Close window" data-tr-label="Pencereyi kapat">×</button>
@@ -111,36 +197,26 @@
         <ul class="link-list">
           <li><a href="https://www.linkedin.com/in/ilkerkayraorman/" target="_blank" rel="noopener">LinkedIn</a></li>
         </ul>
+        <h3 data-en="Funny videos" data-tr="Komik videolar">Funny videos</h3>
+        <p class="muted" data-en="coming soon, I'll add my favorite funny videos here." data-tr="yakında, en sevdiğim komik videoları buraya ekleyeceğim.">coming soon, I'll add my favorite funny videos here.</p>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="window" id="win-faq" data-id="faq" hidden aria-labelledby="faq-title">
+    <!-- FAQ AND CONTACT (merged) -->
+    <section class="window pos-right" data-id="faq-contact" hidden aria-labelledby="faq-title">
       <div class="window-bar">
-        <span class="window-title" data-en="faq" data-tr="sss">faq</span>
+        <span class="window-title" data-en="faq &amp; contact" data-tr="sss ve iletişim">faq &amp; contact</span>
         <button class="close-btn" type="button" aria-label="Close window" data-en-label="Close window" data-tr-label="Pencereyi kapat">×</button>
       </div>
       <div class="window-body">
         <h2 id="faq-title" data-en="FAQ" data-tr="SSS">FAQ</h2>
         <details>
-          <summary data-en="Question one?" data-tr="Birinci soru?">Question one?</summary>
-          <p data-en="Answer one goes here." data-tr="Birinci cevap buraya gelecek.">Answer one goes here.</p>
+          <summary data-en="why did you create a website?" data-tr="neden bir web sitesi yaptın?">why did you create a website?</summary>
+          <p data-en="i was bored." data-tr="sıkılmıştım.">i was bored.</p>
         </details>
-        <details>
-          <summary data-en="Question two?" data-tr="İkinci soru?">Question two?</summary>
-          <p data-en="Answer two goes here." data-tr="İkinci cevap buraya gelecek.">Answer two goes here.</p>
-        </details>
-      </div>
-    </section>
+        <p class="muted" data-en="ask me section, coming later." data-tr="bana sor bölümü, daha sonra eklenecek.">ask me section, coming later.</p>
 
-    <!-- CONTACT -->
-    <section class="window" id="win-contact" data-id="contact" hidden aria-labelledby="contact-title">
-      <div class="window-bar">
-        <span class="window-title" data-en="contact" data-tr="iletişim">contact</span>
-        <button class="close-btn" type="button" aria-label="Close window" data-en-label="Close window" data-tr-label="Pencereyi kapat">×</button>
-      </div>
-      <div class="window-body">
-        <h2 id="contact-title" data-en="Contact" data-tr="İletişim">Contact</h2>
+        <h2 class="section-gap" data-en="Contact" data-tr="İletişim">Contact</h2>
         <p data-en="For ITU-related matters, use" data-tr="İTÜ ile ilgili konular için">For ITU-related matters, use</p>
         <p><a href="mailto:orman20@itu.edu.tr">orman20@itu.edu.tr</a></p>
         <p data-en="For anything else, use" data-tr="Diğer her şey için">For anything else, use</p>
@@ -150,7 +226,7 @@
 
   </main>
 
-  <!-- Notice shown when someone tries to close the home window -->
+  <!-- Shown when someone tries to close the home window -->
   <div class="notice" id="notice" role="alertdialog" aria-modal="true" aria-labelledby="notice-text" hidden>
     <div class="notice-box">
       <p id="notice-text" data-en="this should stay open." data-tr="bu pencere açık kalmalı.">this should stay open.</p>

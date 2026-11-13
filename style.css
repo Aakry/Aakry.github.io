@@ -41,9 +41,7 @@ body {
 }
 
 a { color: var(--accent); }
-
 button { font: inherit; color: inherit; }
-
 [hidden] { display: none !important; }
 
 :focus-visible {
@@ -73,7 +71,7 @@ button { font: inherit; color: inherit; }
 
 .icon-btn:hover { background: var(--accent); color: var(--accent-ink); }
 
-/* ===== Desktop: everything centered ===== */
+/* ===== Desktop ===== */
 .desktop {
   position: relative;
   max-width: 980px;
@@ -82,17 +80,17 @@ button { font: inherit; color: inherit; }
   padding-top: 3.5rem;
 }
 
-/* Icon row, centered */
+/* Icon row, centered at the top */
 .icons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .icon {
-  width: 96px;
+  width: 110px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,6 +101,7 @@ button { font: inherit; color: inherit; }
   padding: 0.4rem;
   cursor: pointer;
   font-family: var(--font-ui);
+  text-align: center;
 }
 
 .icon:hover { border-color: var(--border); background: var(--surface); }
@@ -136,19 +135,10 @@ button { font: inherit; color: inherit; }
   z-index: 2;
 }
 
-/* Home window starts centered under the icons */
-#win-home {
-  top: 120px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* Other windows start near the middle, each offset a little so they don't stack exactly */
-#win-about    { top: 150px; left: 270px; }
-#win-projects { top: 170px; left: 290px; }
-#win-links    { top: 190px; left: 310px; }
-#win-faq      { top: 210px; left: 330px; }
-#win-contact  { top: 230px; left: 350px; }
+/* Starting positions */
+.win-home  { top: 200px; left: 60px; }     /* middle-left, opens first */
+.pos-right { top: 200px; left: 520px; }    /* about, pages, links, faq & contact */
+.pos-page  { top: 240px; left: 540px; }    /* every page opened from the pages list */
 
 .window.is-dragging { opacity: 0.94; }
 
@@ -194,8 +184,12 @@ h1 { font-size: 2rem; margin: 0 0 0.4rem; }
 h2 { font-size: 1.5rem; margin: 0 0 0.8rem; }
 h3 { font-size: 1.1rem; margin: 1.1rem 0 0.4rem; }
 
-/* Home title: calm, minimal, with one accent word */
-.home-body { text-align: center; padding: 2.5rem 1.5rem; }
+.section-gap { margin-top: 1.6rem; }
+
+.muted { color: var(--muted); font-size: 0.95rem; }
+
+/* Home window */
+.home-body { text-align: center; padding: 2.2rem 1.5rem; }
 
 .home-title {
   font-family: var(--font-ui);
@@ -211,6 +205,14 @@ h3 { font-size: 1.1rem; margin: 1.1rem 0 0.4rem; }
   margin-top: 0;
 }
 
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+}
+
 /* ===== Buttons and lists ===== */
 .btn {
   display: inline-block;
@@ -224,6 +226,8 @@ h3 { font-size: 1.1rem; margin: 1.1rem 0 0.4rem; }
   box-shadow: 2px 2px 0 var(--border);
   cursor: pointer;
 }
+
+.btn-alt { background: var(--surface); color: var(--ink); }
 
 .btn:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--border); }
 
@@ -246,38 +250,47 @@ h3 { font-size: 1.1rem; margin: 1.1rem 0 0.4rem; }
 
 .link-list { padding-left: 1.2rem; }
 
-/* ===== Projects grid ===== */
-.grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+/* ===== Pages list: scrollable, with a visible slider bar on the right ===== */
+.box-scroll {
+  max-height: 340px;
+  overflow-y: auto;
+  padding: 0.2rem 0.6rem 0.2rem 0.2rem;
+  scrollbar-width: auto;
+  scrollbar-color: var(--accent) var(--bg);
 }
 
-.item {
+.box-scroll::-webkit-scrollbar { width: 12px; }
+.box-scroll::-webkit-scrollbar-track {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 6px;
+}
+.box-scroll::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border: 2px solid var(--border);
+  border-radius: 6px;
+}
+
+.page-box {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--bg);
   border: 2px solid var(--border);
   border-radius: var(--radius);
-  padding: 0.7rem;
-  background: var(--bg);
+  padding: 0.7rem 0.9rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--border);
 }
 
-.item h3 { margin-top: 0.5rem; }
+.page-box:hover { background: var(--surface); }
 
-.item p {
-  margin: 0.2rem 0 0.5rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
+.page-box:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--border); }
 
-.thumb {
-  aspect-ratio: 4 / 3;
-  display: grid;
-  place-items: center;
-  background: var(--surface);
-  border: 2px dashed var(--border);
-  border-radius: var(--radius);
-  font-family: var(--font-ui);
-  color: var(--muted);
-}
+.page-box h3 { margin: 0 0 0.2rem; font-family: var(--font-ui); }
+
+.page-box p { margin: 0; color: var(--muted); font-size: 0.95rem; }
 
 /* ===== FAQ ===== */
 details {
@@ -331,9 +344,7 @@ summary {
   }
 
   .icons { gap: 0.4rem; }
-
-  .icon { width: 74px; }
-
+  .icon { width: 84px; }
   .icon-img { font-size: 1.8rem; }
 
   .window {
@@ -349,6 +360,8 @@ summary {
   .window-bar { cursor: default; }
 
   .home-title { font-size: 1.7rem; }
+
+  .box-scroll { max-height: 300px; }
 }
 
 /* ===== Reduced motion ===== */
