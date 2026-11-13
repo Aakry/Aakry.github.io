@@ -1,13 +1,13 @@
-/* ===== Theme tokens ===== */
+/* ===== Theme tokens: change colors here ===== */
 :root {
-  --bg: #d9d4e4;
-  --surface: #fdfcff;
-  --ink: #2b2433;
-  --muted: #6b6276;
-  --accent: #5b8c6a;
+  --bg: #eef0f4;
+  --surface: #ffffff;
+  --ink: #2f3440;
+  --muted: #6e7587;
+  --accent: #7fa7c9;
   --accent-ink: #ffffff;
-  --border: #2b2433;
-  --shadow: 4px 4px 0 #2b2433;
+  --border: #2f3440;
+  --shadow: 3px 3px 0 #2f3440;
   --radius: 6px;
   --font-body: Georgia, "Times New Roman", serif;
   --font-ui: "Trebuchet MS", "Helvetica Neue", Arial, sans-serif;
@@ -15,14 +15,14 @@
 }
 
 :root[data-theme="dark"] {
-  --bg: #1d1a24;
-  --surface: #2a2533;
-  --ink: #efe9f7;
-  --muted: #b3a8c2;
-  --accent: #8fc7a0;
-  --accent-ink: #1d1a24;
-  --border: #efe9f7;
-  --shadow: 4px 4px 0 #0f0c14;
+  --bg: #1c1f26;
+  --surface: #262a33;
+  --ink: #e8ebf2;
+  --muted: #a4abbb;
+  --accent: #5d7f9e;
+  --accent-ink: #ffffff;
+  --border: #e8ebf2;
+  --shadow: 3px 3px 0 #0e1015;
   color-scheme: dark;
 }
 
@@ -51,23 +51,19 @@ button { font: inherit; color: inherit; }
   outline-offset: 3px;
 }
 
-/* ===== Top bar ===== */
-.topbar {
+/* ===== Top-right controls ===== */
+.controls {
+  position: fixed;
+  top: 0.8rem;
+  right: 1rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  background: var(--surface);
-  border-bottom: 2px solid var(--border);
-  font-family: var(--font-ui);
-  position: relative;
+  gap: 0.5rem;
   z-index: 1000;
 }
 
-.site-title { font-weight: bold; }
-
 .icon-btn {
   font-family: var(--font-ui);
+  font-size: 0.9rem;
   background: var(--surface);
   border: 2px solid var(--border);
   border-radius: var(--radius);
@@ -77,26 +73,26 @@ button { font: inherit; color: inherit; }
 
 .icon-btn:hover { background: var(--accent); color: var(--accent-ink); }
 
-/* ===== Desktop ===== */
+/* ===== Desktop: everything centered ===== */
 .desktop {
   position: relative;
-  min-height: calc(100vh - 110px);
-  overflow: hidden;
+  max-width: 980px;
+  min-height: 88vh;
+  margin: 0 auto;
+  padding-top: 3.5rem;
 }
 
-/* Icons: a column on the left */
+/* Icon row, centered */
 .icons {
-  position: absolute;
-  top: 1.2rem;
-  left: 1.2rem;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
-  z-index: 1;
+  margin-bottom: 1.5rem;
 }
 
 .icon {
-  width: 92px;
+  width: 96px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -111,8 +107,6 @@ button { font: inherit; color: inherit; }
 
 .icon:hover { border-color: var(--border); background: var(--surface); }
 
-.icon:focus-visible { outline-offset: 2px; }
-
 .icon-img {
   font-size: 2.2rem;
   line-height: 1;
@@ -120,7 +114,6 @@ button { font: inherit; color: inherit; }
 }
 
 .icon:hover .icon-img { transform: scale(1.1); }
-
 .icon:active .icon-img { transform: scale(0.9); }
 
 .icon-label {
@@ -143,7 +136,21 @@ button { font: inherit; color: inherit; }
   z-index: 2;
 }
 
-.window.is-dragging { opacity: 0.92; }
+/* Home window starts centered under the icons */
+#win-home {
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Other windows start near the middle, each offset a little so they don't stack exactly */
+#win-about    { top: 150px; left: 270px; }
+#win-projects { top: 170px; left: 290px; }
+#win-links    { top: 190px; left: 310px; }
+#win-faq      { top: 210px; left: 330px; }
+#win-contact  { top: 230px; left: 350px; }
+
+.window.is-dragging { opacity: 0.94; }
 
 .window-bar {
   display: flex;
@@ -180,13 +187,23 @@ button { font: inherit; color: inherit; }
 .close-btn:hover { background: var(--ink); color: var(--surface); }
 
 .window-body { padding: 1.1rem 1.3rem; }
-
 .window-body > :first-child { margin-top: 0; }
 
 h1, h2, h3 { line-height: 1.2; font-weight: normal; }
 h1 { font-size: 2rem; margin: 0 0 0.4rem; }
 h2 { font-size: 1.5rem; margin: 0 0 0.8rem; }
 h3 { font-size: 1.1rem; margin: 1.1rem 0 0.4rem; }
+
+/* Home title: calm, minimal, with one accent word */
+.home-body { text-align: center; padding: 2.5rem 1.5rem; }
+
+.home-title {
+  font-family: var(--font-ui);
+  font-size: 2.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.home-title .accent { color: var(--accent); }
 
 .subtitle {
   font-family: var(--font-ui);
@@ -204,11 +221,11 @@ h3 { font-size: 1.1rem; margin: 1.1rem 0 0.4rem; }
   border-radius: var(--radius);
   padding: 0.45rem 0.9rem;
   text-decoration: none;
-  box-shadow: 3px 3px 0 var(--border);
+  box-shadow: 2px 2px 0 var(--border);
   cursor: pointer;
 }
 
-.btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--border); }
+.btn:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--border); }
 
 .tag-list {
   list-style: none;
@@ -274,39 +291,64 @@ summary {
   font-weight: bold;
 }
 
+/* ===== Notice (home window close attempt) ===== */
+.notice {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: grid;
+  place-items: center;
+  z-index: 3000;
+  padding: 1rem;
+}
+
+.notice-box {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.4rem 1.6rem;
+  text-align: center;
+  max-width: 340px;
+}
+
+.notice-box p { margin: 0 0 1rem; }
+
 /* ===== Footer ===== */
 .footer {
   text-align: center;
   font-family: var(--font-ui);
   color: var(--muted);
-  padding: 0.8rem;
+  padding: 1rem;
   font-size: 0.9rem;
 }
 
-/* ===== Small screens: windows fill the width, icons move to the top ===== */
+/* ===== Small screens: stack everything ===== */
 @media (max-width: 720px) {
-  .icons {
-    position: static;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 1rem 0.5rem 0;
+  .desktop {
+    min-height: 0;
+    padding-top: 3rem;
   }
 
-  .desktop { min-height: 80vh; }
+  .icons { gap: 0.4rem; }
+
+  .icon { width: 74px; }
+
+  .icon-img { font-size: 1.8rem; }
 
   .window {
-    width: calc(100% - 1.5rem);
-    left: 0.75rem !important;
-    top: auto !important;
-    margin-bottom: 1rem;
     position: relative;
+    width: calc(100% - 1.5rem);
     max-height: none;
+    margin: 0 auto 1rem;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
   }
 
   .window-bar { cursor: default; }
 
-  h1 { font-size: 1.7rem; }
+  .home-title { font-size: 1.7rem; }
 }
 
 /* ===== Reduced motion ===== */
