@@ -377,9 +377,9 @@ summary {
 }
 
 .page-thumb {
-  width: 56px;
-  height: 56px;
-  flex: 0 0 56px;
+  width: 61.6px;
+  height: 61.6px;
+  flex: 0 0 61.6px;
   object-fit: cover;
   border: 2px solid var(--border);
   border-radius: 4px;
