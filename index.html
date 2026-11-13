@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="YOUR SHORT DESCRIPTION HERE">
+  <title>YOUR NAME's desktop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <span class="site-title">YOUR NAME's desktop</span>
+    <div class="controls">
+      <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle dark mode">
+        <span aria-hidden="true">◐</span> Theme
+      </button>
+    </div>
+  </header>
+
+  <main class="desktop">
+
+    <!-- Intro window -->
+    <section class="window window-intro" id="home" aria-labelledby="intro-title">
+      <div class="window-bar">
+        <span class="window-title">home.txt</span>
+      </div>
+      <div class="window-body">
+        <h1 id="intro-title">Hi, I'm YOUR NAME</h1>
+        <p class="subtitle">YOUR ROLE, e.g. illustrator and developer</p>
+        <p>
+          Replace this with a short introduction. Two or three sentences about
+          what you do and what you care about.
+        </p>
+        <p><a class="btn" href="#contact">Get in touch</a></p>
+      </div>
+    </section>
+
+    <!-- About window -->
+    <section class="window" id="about" aria-labelledby="about-title">
+      <div class="window-bar">
+        <span class="window-title">about.txt</span>
+      </div>
+      <div class="window-body">
+        <h2 id="about-title">About</h2>
+        <p>
+          Tell visitors who you are, where you're based, and what kind of work
+          you're looking for. Keep it short and personal.
+        </p>
+        <h3>Tools</h3>
+        <ul class="tag-list">
+          <li>Tool one</li>
+          <li>Tool two</li>
+          <li>Tool three</li>
+        </ul>
+        <h3>Interests</h3>
+        <ul class="tag-list">
+          <li>Interest one</li>
+          <li>Interest two</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects / gallery window -->
+    <section class="window" id="projects" aria-labelledby="projects-title">
+      <div class="window-bar">
+        <span class="window-title">projects</span>
+      </div>
+      <div class="window-body">
+        <h2 id="projects-title">Projects</h2>
+        <div class="grid">
+          <article class="item">
+            <div class="thumb" role="img" aria-label="Project one thumbnail placeholder">Image</div>
+            <h3>Project title</h3>
+            <p>One line describing the project.</p>
+            <a href="#">View project</a>
+          </article>
+          <article class="item">
+            <div class="thumb" role="img" aria-label="Project two thumbnail placeholder">Image</div>
+            <h3>Project title</h3>
+            <p>One line describing the project.</p>
+            <a href="#">View project</a>
+          </article>
+          <article class="item">
+            <div class="thumb" role="img" aria-label="Project three thumbnail placeholder">Image</div>
+            <h3>Project title</h3>
+            <p>One line describing the project.</p>
+            <a href="#">View project</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Links window -->
+    <section class="window" id="links" aria-labelledby="links-title">
+      <div class="window-bar">
+        <span class="window-title">links</span>
+      </div>
+      <div class="window-body">
+        <h2 id="links-title">Links</h2>
+        <ul class="link-list">
+          <li><a href="#" target="_blank" rel="noopener">Platform one</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Platform two</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Platform three</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ window -->
+    <section class="window" id="faq" aria-labelledby="faq-title">
+      <div class="window-bar">
+        <span class="window-title">faq</span>
+      </div>
+      <div class="window-body">
+        <h2 id="faq-title">FAQ</h2>
+        <details>
+          <summary>Question one?</summary>
+          <p>Answer one goes here.</p>
+        </details>
+        <details>
+          <summary>Question two?</summary>
+          <p>Answer two goes here.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Contact window -->
+    <section class="window" id="contact" aria-labelledby="contact-title">
+      <div class="window-bar">
+        <span class="window-title">contact</span>
+      </div>
+      <div class="window-body">
+        <h2 id="contact-title">Contact</h2>
+        <p>The easiest way to reach me is by email.</p>
+        <p><a class="btn" href="mailto:YOUR@EMAIL.com">Send me an email</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> YOUR NAME</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

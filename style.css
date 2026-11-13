@@ -1,0 +1,289 @@
+/* ===== Theme tokens ===== */
+:root {
+  --bg: #e9e4f0;
+  --surface: #fdfcff;
+  --ink: #2b2433;
+  --muted: #6b6276;
+  --accent: #5b8c6a;
+  --accent-ink: #ffffff;
+  --border: #2b2433;
+  --shadow: 4px 4px 0 #2b2433;
+  --radius: 6px;
+
+  --font-body: "Georgia", "Times New Roman", serif;
+  --font-ui: "Trebuchet MS", "Helvetica Neue", Arial, sans-serif;
+
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #1d1a24;
+  --surface: #2a2533;
+  --ink: #efe9f7;
+  --muted: #b3a8c2;
+  --accent: #8fc7a0;
+  --accent-ink: #1d1a24;
+  --border: #efe9f7;
+  --shadow: 4px 4px 0 #0f0c14;
+
+  color-scheme: dark;
+}
+
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ===== Top bar ===== */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 1rem;
+  background: var(--surface);
+  border-bottom: 2px solid var(--border);
+  font-family: var(--font-ui);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-title {
+  font-weight: bold;
+}
+
+.icon-btn {
+  font: inherit;
+  font-family: var(--font-ui);
+  background: var(--surface);
+  color: var(--ink);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* ===== Desktop layout ===== */
+.desktop {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.window-intro {
+  grid-column: 1 / -1;
+}
+
+/* ===== Windows ===== */
+.window {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  scroll-margin-top: 4rem;
+}
+
+.window-bar {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-bottom: 2px solid var(--border);
+  padding: 0.35rem 0.8rem;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+}
+
+.window-body {
+  padding: 1.25rem 1.4rem;
+}
+
+.window-body > :first-child {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin: 0 0 0.4rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin: 0 0 0.8rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+  margin: 1.2rem 0 0.5rem;
+}
+
+.subtitle {
+  font-family: var(--font-ui);
+  color: var(--muted);
+  margin-top: 0;
+}
+
+/* ===== Buttons and lists ===== */
+.btn {
+  display: inline-block;
+  font-family: var(--font-ui);
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  box-shadow: 3px 3px 0 var(--border);
+}
+
+.btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--border);
+}
+
+.tag-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-list li {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+}
+
+.link-list {
+  padding-left: 1.2rem;
+}
+
+/* ===== Projects grid ===== */
+.grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.item {
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.8rem;
+  background: var(--bg);
+}
+
+.item h3 {
+  margin-top: 0.6rem;
+}
+
+.item p {
+  margin: 0.3rem 0 0.6rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.thumb {
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-ui);
+  color: var(--muted);
+}
+
+/* ===== FAQ ===== */
+details {
+  border-bottom: 1px solid var(--border);
+  padding: 0.6rem 0;
+}
+
+summary {
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-weight: bold;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  font-family: var(--font-ui);
+  color: var(--muted);
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 720px) {
+  .desktop {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
