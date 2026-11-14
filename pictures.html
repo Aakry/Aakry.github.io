@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PICTURES by İ. Kayra Orman">
-  <title>PICTURES | İ. Kayra Orman</title>
+  <meta name="description" content="A collection of photos">
+  <title>PICTURES</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,12 +19,62 @@
 
     <header class="detail-header">
       <h1>PICTURES</h1>
-      <p data-en="pictures possibly i took." data-tr="muhtemelen benim çektiğim fotoğraflar.">pictures possibly i took.</p>
+      <p data-en="A collection of photos." data-tr="Fotoğraf koleksiyonu.">A collection of photos.</p>
     </header>
 
-    <article class="detail-body">
-      <p class="muted" data-en="content coming soon." data-tr="içerik yakında.">content coming soon.</p>
-    </article>
+    <section class="picture-filters" aria-label="Photo filters" data-en-label="Photo filters" data-tr-label="Fotoğraf filtreleri">
+      <label class="food-filter">
+        <span data-en="Search" data-tr="Ara">Search</span>
+        <input id="picture-search" type="search" data-en-placeholder="Search photos" data-tr-placeholder="Fotoğraflarda ara" placeholder="Search photos">
+      </label>
+      <label class="food-filter">
+        <span data-en="Country" data-tr="Ülke">Country</span>
+        <select id="picture-country">
+          <option value="" data-en="All countries" data-tr="Tüm ülkeler">All countries</option>
+          <option value="Turkey" data-en="Turkey" data-tr="Türkiye">Turkey</option>
+        </select>
+      </label>
+      <label class="food-filter">
+        <span data-en="City" data-tr="Şehir">City</span>
+        <select id="picture-city">
+          <option value="" data-en="All cities" data-tr="Tüm şehirler">All cities</option>
+          <option value="Istanbul" data-en="Istanbul" data-tr="İstanbul">Istanbul</option>
+        </select>
+      </label>
+      <label class="food-filter">
+        <span data-en="Location" data-tr="Konum">Location</span>
+        <select id="picture-location">
+          <option value="" data-en="All locations" data-tr="Tüm konumlar">All locations</option>
+          <option value="Istanbul Technical University" data-en="Istanbul Technical University" data-tr="İstanbul Teknik Üniversitesi">Istanbul Technical University</option>
+        </select>
+      </label>
+      <label class="food-filter">
+        <span data-en="Theme" data-tr="Tema">Theme</span>
+        <select id="picture-theme">
+          <option value="" data-en="All themes" data-tr="Tüm temalar">All themes</option>
+          <option value="architecture" data-en="Architecture" data-tr="Mimari">Architecture</option>
+        </select>
+      </label>
+      <label class="food-filter">
+        <span data-en="Device" data-tr="Cihaz">Device</span>
+        <select id="picture-device">
+          <option value="" data-en="All devices" data-tr="Tüm cihazlar">All devices</option>
+          <option value="iPhone 17e">iPhone 17e</option>
+        </select>
+      </label>
+    </section>
+
+    <p id="picture-no-results" class="food-no-results muted" role="status" aria-live="polite" hidden data-en="No photos match these filters." data-tr="Bu filtrelere uygun fotoğraf bulunamadı.">No photos match these filters.</p>
+
+    <section class="picture-grid" aria-label="Photo gallery" data-en-label="Photo gallery" data-tr-label="Fotoğraf galerisi">
+      <figure class="picture-card" data-country="Turkey" data-city="Istanbul" data-location="Istanbul Technical University" data-theme="architecture" data-device="iPhone 17e">
+        <img src="images/pictures/pictures.jpg" alt="Photo 1" width="250" height="250">
+        <figcaption>
+          <strong data-en="Photo 1" data-tr="Fotoğraf 1">Photo 1</strong>
+          <span data-en="Istanbul Technical University, Istanbul, Turkey · Architecture · iPhone 17e" data-tr="İstanbul Teknik Üniversitesi, İstanbul, Türkiye · Mimari · iPhone 17e">Istanbul Technical University, Istanbul, Turkey · Architecture · iPhone 17e</span>
+        </figcaption>
+      </figure>
+    </section>
   </main>
 
   <footer class="footer">
@@ -32,5 +82,42 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    (function () {
+      var cards = document.querySelectorAll(".picture-card");
+      var search = document.getElementById("picture-search");
+      var filters = {
+        country: document.getElementById("picture-country"),
+        city: document.getElementById("picture-city"),
+        location: document.getElementById("picture-location"),
+        theme: document.getElementById("picture-theme"),
+        device: document.getElementById("picture-device")
+      };
+      var noResults = document.getElementById("picture-no-results");
+
+      function applyFilters() {
+        var query = search.value.trim().toLowerCase();
+        var hasResults = false;
+
+        cards.forEach(function (card) {
+          var matches = (!query || card.textContent.toLowerCase().indexOf(query) !== -1) &&
+            Object.keys(filters).every(function (key) {
+              var value = filters[key].value.trim().toLowerCase();
+              var metadata = (card.getAttribute("data-" + key) || "").toLowerCase();
+              return !value || metadata === value;
+            });
+          card.hidden = !matches;
+          if (matches) hasResults = true;
+        });
+
+        noResults.hidden = hasResults;
+      }
+
+      search.addEventListener("input", applyFilters);
+      Object.keys(filters).forEach(function (key) {
+        filters[key].addEventListener("change", applyFilters);
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -448,7 +448,8 @@ summary {
   z-index: 20;
 }
 
-.food-filters {
+.food-filters,
+.picture-filters {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   align-items: end;
@@ -499,6 +500,41 @@ summary {
   border-radius: var(--radius);
   background: var(--surface);
 }
+
+.picture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.picture-card {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.picture-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--surface);
+}
+
+.picture-card figcaption {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+}
+
+.picture-card figcaption span { color: var(--muted); }
 
 .detail-body {
   background: var(--surface);
