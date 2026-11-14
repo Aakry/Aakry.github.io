@@ -44,14 +44,14 @@
         <button class="close-btn" type="button" aria-label="Close window" data-en-label="Close window" data-tr-label="Pencereyi kapat">×</button>
       </div>
       <div class="window-body home-body">
-        <h1 id="home-title" class="home-title">
-          <span data-en="hi, i'm" data-tr="selam, ben">hi, i'm</span>
-          <span class="accent" data-en="Kayra" data-tr="Kayra">Kayra</span>
-        </h1>
-        <p class="subtitle" data-en="mediocre engineer also cook (okayish)" data-tr="ortalama mühendis, vasatın bir tık üstü aşçı">mediocre engineer also cook (okayish)</p>
-        <p data-en="Electrical and Control Engineering @ ITU. While I was at ITU, I also studied cooking at Istanbul Bilgi Uni. so a cook too" data-tr=" Elektrik ve Kontrol Mühendisliği @ İTÜ  Ayrıca, İstanbul Bilgi Üni. Aşçılık.">Electrical also Control Engineering @ ITU. While I was at ITU, I also studied cooking at Istanbul Bilgi Uni. so a cook too</p>
+        <h1 id="home-title" class="home-title">İ. Kayra Orman</h1>
+        <p class="subtitle" data-en="mediocre engineer and also, cook" data-tr="vasat mühendis ve aynı zamanda aşçı">mediocre engineer and also, cook</p>
+        <p>
+          <span data-en="Electrical and Control Engineering @ İTÜ." data-tr="Elektrik ve Kontrol Mühendisliği @ İTÜ.">Electrical and Control Engineering @ İTÜ.</span><br>
+          <span data-en="Cooking @ Bilgi Univ." data-tr="Aşçılık @ Bilgi Üniversitesi.">Cooking @ Bilgi Univ.</span>
+        </p>
         <p class="home-actions">
-          <button class="btn" type="button" data-open="faq-contact" data-en="get in touch" data-tr="iletişime geç">get in touch</button>
+          <button class="btn btn-alt" type="button" data-open="faq-contact" data-en="get in touch" data-tr="iletişime geç">get in touch</button>
         </p>
       </div>
     </section>
@@ -268,9 +268,11 @@
         <h2 class="section-gap" data-en="Leave a message" data-tr="Mesaj bırak">Leave a message</h2>
         
         <form class="msg-form" action="https://formspree.io/f/mgaarogk" method="POST">
+          <label for="msg-name" data-en="name" data-tr="isim">name</label>
+          <input id="msg-name" type="text" name="name" maxlength="100" autocomplete="name">
           <label for="msg-text" data-en="your message" data-tr="mesajın">your message</label>
           <textarea id="msg-text" name="message" rows="4" maxlength="1000" required></textarea>
-          <input type="hidden" name="_subject" value="New anonymous message from your site">
+          <input type="hidden" name="_subject" value="New message from your site">
           <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button class="btn" type="submit" data-en="send" data-tr="gönder">send</button>
         </form>
