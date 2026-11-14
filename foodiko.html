@@ -31,47 +31,52 @@
       </div>
     </div>
 
-    <!-- SECTION 1: cooked by me -->
-    <section class="food-section" aria-labelledby="by-me">
-      <h2 id="by-me">cooked by me</h2>
-      <div class="food-grid">
-
-        <button class="food-card" type="button" data-open="menemen">
-          <img src="images/foodiko/menemen.jpg" alt="Menemen in a pan" width="400" height="220" onerror="this.style.display='none'">
-          <span class="food-card-text">
-            <span class="card-place">Home kitchen</span>
-            <span class="card-food">Menemen</span>
-            <span class="card-tag">cooked by me</span>
-          </span>
-        </button>
-
-        <button class="food-card" type="button" data-open="lentil">
-          <img src="images/foodiko/lentil-soup.jpg" alt="Lentil soup in a bowl" width="400" height="220" onerror="this.style.display='none'">
-          <span class="food-card-text">
-            <span class="card-place">Home kitchen</span>
-            <span class="card-food">Mercimek çorbası</span>
-            <span class="card-tag">cooked by me</span>
-          </span>
-        </button>
-
-        <button class="food-card" type="button" data-open="pizza">
-          <img src="images/foodiko/homemade-pizza.jpg" alt="Homemade pizza on a board" width="400" height="220" onerror="this.style.display='none'">
-          <span class="food-card-text">
-            <span class="card-place">Home kitchen</span>
-            <span class="card-food">Homemade pizza</span>
-            <span class="card-tag">cooked by me</span>
-          </span>
-        </button>
-
-      </div>
+    <section class="food-filters" aria-label="Food filters" data-en-label="Food filters" data-tr-label="Yemek filtreleri">
+      <label class="food-filter">
+        <span data-en="Search" data-tr="Ara">Search</span>
+        <input id="food-search" type="search" data-en-placeholder="Search foods or places" data-tr-placeholder="Yemek veya yer ara" placeholder="Search foods or places">
+      </label>
+      <label class="food-filter">
+        <span data-en="Country" data-tr="Ülke">Country</span>
+        <select id="food-country">
+          <option value="" data-en="All countries" data-tr="Tüm ülkeler">All countries</option>
+          <option value="Turkey" data-en="Turkey" data-tr="Türkiye">Turkey</option>
+          <option value="Japan" data-en="Japan" data-tr="Japonya">Japan</option>
+          <option value="Italy" data-en="Italy" data-tr="İtalya">Italy</option>
+        </select>
+      </label>
+      <label class="food-filter">
+        <span data-en="City / place" data-tr="Şehir / yer">City / place</span>
+        <select id="food-place">
+          <option value="" data-en="All places" data-tr="Tüm yerler">All places</option>
+          <option value="Local place near home">Local place near home</option>
+          <option value="Friend's kitchen">Friend's kitchen</option>
+          <option value="Mom's kitchen">Mom's kitchen</option>
+          <option value="Home kitchen">Home kitchen</option>
+        </select>
+      </label>
+      <label class="food-filter">
+        <span data-en="Cooked by" data-tr="Yapan">Cooked by</span>
+        <select id="food-cook">
+          <option value="" data-en="Anyone" data-tr="Fark etmez">Anyone</option>
+          <option value="me" data-en="Me" data-tr="Ben">Me</option>
+          <option value="someone-else" data-en="Someone else" data-tr="Başka biri">Someone else</option>
+        </select>
+      </label>
+      <label class="food-airplane-filter">
+        <input id="food-airplane-only" type="checkbox">
+        <span data-en="Airplane food only" data-tr="Sadece uçak yemekleri">Airplane food only</span>
+      </label>
     </section>
 
-    <!-- SECTION 2: cooked by someone else -->
+    <p id="food-no-results" class="food-no-results muted" role="status" aria-live="polite" hidden data-en="No foods match these filters." data-tr="Bu filtrelere uygun yemek bulunamadı.">No foods match these filters.</p>
+
+    <!-- SECTION 1: cooked by someone else -->
     <section class="food-section" aria-labelledby="by-others">
       <h2 id="by-others">cooked by someone else</h2>
       <div class="food-grid">
 
-        <button class="food-card" type="button" data-open="lahmacun">
+        <button class="food-card" type="button" data-open="lahmacun" data-country="Turkey" data-place="Local place near home" data-cooked-by="someone-else" data-airplane="false">
           <img src="images/foodiko/lahmacun.jpg" alt="Lahmacun rolled with parsley and lemon" width="400" height="220" onerror="this.style.display='none'">
           <span class="food-card-text">
             <span class="card-place">Local place near home</span>
@@ -80,7 +85,7 @@
           </span>
         </button>
 
-        <button class="food-card" type="button" data-open="ramen">
+        <button class="food-card" type="button" data-open="ramen" data-country="Japan" data-place="Friend's kitchen" data-cooked-by="someone-else" data-airplane="false">
           <img src="images/foodiko/ramen.jpg" alt="Bowl of ramen with soft egg" width="400" height="220" onerror="this.style.display='none'">
           <span class="food-card-text">
             <span class="card-place">Friend's kitchen</span>
@@ -89,7 +94,7 @@
           </span>
         </button>
 
-        <button class="food-card" type="button" data-open="borek">
+        <button class="food-card" type="button" data-open="borek" data-country="Turkey" data-place="Mom's kitchen" data-cooked-by="someone-else" data-airplane="false">
           <img src="images/foodiko/borek.jpg" alt="Golden börek on a plate" width="400" height="220" onerror="this.style.display='none'">
           <span class="food-card-text">
             <span class="card-place">Mom's kitchen</span>
@@ -100,7 +105,40 @@
 
       </div>
     </section>
+ <!-- SECTION 2: cooked by me -->
+    <section class="food-section" aria-labelledby="by-me">
+      <h2 id="by-me">cooked by me</h2>
+      <div class="food-grid">
 
+        <button class="food-card" type="button" data-open="menemen" data-country="Turkey" data-place="Home kitchen" data-cooked-by="me" data-airplane="false">
+          <img src="images/foodiko/menemen.jpg" alt="Menemen in a pan" width="400" height="220" onerror="this.style.display='none'">
+          <span class="food-card-text">
+            <span class="card-place">Home kitchen</span>
+            <span class="card-food">Menemen</span>
+            <span class="card-tag">cooked by me</span>
+          </span>
+        </button>
+
+        <button class="food-card" type="button" data-open="lentil" data-country="Turkey" data-place="Home kitchen" data-cooked-by="me" data-airplane="false">
+          <img src="images/foodiko/lentil-soup.jpg" alt="Lentil soup in a bowl" width="400" height="220" onerror="this.style.display='none'">
+          <span class="food-card-text">
+            <span class="card-place">Home kitchen</span>
+            <span class="card-food">Mercimek çorbası</span>
+            <span class="card-tag">cooked by me</span>
+          </span>
+        </button>
+
+        <button class="food-card" type="button" data-open="pizza" data-country="Italy" data-place="Home kitchen" data-cooked-by="me" data-airplane="false">
+          <img src="images/foodiko/homemade-pizza.jpg" alt="Homemade pizza on a board" width="400" height="220" onerror="this.style.display='none'">
+          <span class="food-card-text">
+            <span class="card-place">Home kitchen</span>
+            <span class="card-food">Homemade pizza</span>
+            <span class="card-tag">cooked by me</span>
+          </span>
+        </button>
+
+      </div>
+    </section>
     <!-- POP-UP WINDOWS: one per food. Opened by the cards above. -->
 
     <section class="window food-win" data-id="menemen" hidden aria-labelledby="w-menemen">
@@ -225,6 +263,45 @@
 
   <script src="script.js"></script>
   <script>
+    // Filters apply to the food cards without affecting their detail windows.
+    (function () {
+      var cards = document.querySelectorAll(".food-card");
+      var sections = document.querySelectorAll(".food-section");
+      var search = document.getElementById("food-search");
+      var country = document.getElementById("food-country");
+      var place = document.getElementById("food-place");
+      var cook = document.getElementById("food-cook");
+      var airplaneOnly = document.getElementById("food-airplane-only");
+      var noResults = document.getElementById("food-no-results");
+
+      function applyFilters() {
+        var query = search.value.trim().toLowerCase();
+        var hasResults = false;
+
+        cards.forEach(function (card) {
+          var matches = (!query || card.textContent.toLowerCase().indexOf(query) !== -1) &&
+            (!country.value || card.getAttribute("data-country") === country.value) &&
+            (!place.value || card.getAttribute("data-place") === place.value) &&
+            (!cook.value || card.getAttribute("data-cooked-by") === cook.value) &&
+            (!airplaneOnly.checked || card.getAttribute("data-airplane") === "true");
+
+          card.hidden = !matches;
+          if (matches) hasResults = true;
+        });
+
+        sections.forEach(function (section) {
+          var visibleCard = section.querySelector(".food-card:not([hidden])");
+          section.hidden = !visibleCard;
+        });
+        noResults.hidden = hasResults;
+      }
+
+      search.addEventListener("input", applyFilters);
+      [country, place, cook, airplaneOnly].forEach(function (control) {
+        control.addEventListener("change", applyFilters);
+      });
+    })();
+
     // Grid / list switch: changes both sections at once
     (function () {
       var buttons = document.querySelectorAll(".seg-btn");

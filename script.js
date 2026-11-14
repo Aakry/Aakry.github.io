@@ -50,6 +50,11 @@
       el.setAttribute("aria-label", el.getAttribute("data-" + lang + "-label"));
     });
 
+    // Placeholder text
+    document.querySelectorAll("[data-" + lang + "-placeholder]").forEach(function (el) {
+      el.setAttribute("placeholder", el.getAttribute("data-" + lang + "-placeholder"));
+    });
+
     // Button that shows the language you can switch TO
     if (langToggle) {
       langToggle.textContent = lang === "tr" ? "EN" : "TR";
