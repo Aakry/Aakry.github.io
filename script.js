@@ -60,9 +60,6 @@
       langToggle.textContent = lang === "tr" ? "EN" : "TR";
     }
 
-    // Keep the document title in sync
-    document.title = "İ. Kayra Orman";
-
     try { localStorage.setItem("lang", lang); } catch (e) {}
   }
 
@@ -143,14 +140,16 @@
 
       // Switch from centered (transform) to plain pixel positioning before moving
       var rect = win.getBoundingClientRect();
-      var parentRect = desktop.getBoundingClientRect();
+      var isFixed = window.getComputedStyle(win).position === "fixed";
+      var parentRect = isFixed ? null : desktop.getBoundingClientRect();
       win.style.transform = "none";
-      win.style.left = (rect.left - parentRect.left) + "px";
-      win.style.top = (rect.top - parentRect.top) + "px";
+      win.style.left = (rect.left - (parentRect ? parentRect.left : 0)) + "px";
+      win.style.top = (rect.top - (parentRect ? parentRect.top : 0)) + "px";
 
       drag = {
         offsetX: e.clientX - rect.left,
-        offsetY: e.clientY - rect.top
+        offsetY: e.clientY - rect.top,
+        fixed: isFixed
       };
 
       win.classList.add("is-dragging");
@@ -162,13 +161,13 @@
     bar.addEventListener("pointermove", function (e) {
       if (!drag) return;
 
-      var parentRect = desktop.getBoundingClientRect();
-      var newLeft = e.clientX - drag.offsetX - parentRect.left;
-      var newTop = e.clientY - drag.offsetY - parentRect.top;
+      var parentRect = drag.fixed ? null : desktop.getBoundingClientRect();
+      var newLeft = e.clientX - drag.offsetX - (parentRect ? parentRect.left : 0);
+      var newTop = e.clientY - drag.offsetY - (parentRect ? parentRect.top : 0);
 
       // Keep the title bar inside the desktop area
-      var maxLeft = desktop.clientWidth - 60;
-      var maxTop = desktop.clientHeight - 40;
+      var maxLeft = drag.fixed ? window.innerWidth - 60 : desktop.clientWidth - 60;
+      var maxTop = drag.fixed ? window.innerHeight - 40 : desktop.clientHeight - 40;
       newLeft = Math.max(-win.offsetWidth + 80, Math.min(newLeft, maxLeft));
       newTop = Math.max(0, Math.min(newTop, maxTop));
 

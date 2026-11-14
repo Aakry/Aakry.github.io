@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FOODIKO by İ. Kayra Orman, foods cooked and tasted">
-  <title>FOODIKO | İ. Kayra Orman</title>
+  <meta name="description" content="FOODIKO food collection">
+  <title>FOODIKO</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
 
     <header class="detail-header">
       <h1>FOODIKO</h1>
-      <p data-en="this page has foods cooked and/or tasted by me." data-tr="bu sayfada benim yaptığım ve/veya tattığım yemekler var.">this page has foods cooked and/or tasted by me.</p>
+      <p data-en="a collection of food." data-tr="yemek koleksiyonu.">a collection of food.</p>
     </header>
 
     <!-- View switch: grid or list. Applies to both sections. -->
@@ -40,27 +40,29 @@
         <span data-en="Country" data-tr="Ülke">Country</span>
         <select id="food-country">
           <option value="" data-en="All countries" data-tr="Tüm ülkeler">All countries</option>
-          <option value="Turkey" data-en="Turkey" data-tr="Türkiye">Turkey</option>
-          <option value="Japan" data-en="Japan" data-tr="Japonya">Japan</option>
-          <option value="Italy" data-en="Italy" data-tr="İtalya">Italy</option>
+          <option value="country1" data-en="Country 1" data-tr="Ülke 1">Country 1</option>
+          <option value="country2" data-en="Country 2" data-tr="Ülke 2">Country 2</option>
+          <option value="country3" data-en="Country 3" data-tr="Ülke 3">Country 3</option>
         </select>
       </label>
       <label class="food-filter">
         <span data-en="City / place" data-tr="Şehir / yer">City / place</span>
         <select id="food-place">
           <option value="" data-en="All places" data-tr="Tüm yerler">All places</option>
-          <option value="Local place near home">Local place near home</option>
-          <option value="Friend's kitchen">Friend's kitchen</option>
-          <option value="Mom's kitchen">Mom's kitchen</option>
-          <option value="Home kitchen">Home kitchen</option>
+          <option value="place1" data-en="Place 1" data-tr="Yer 1">Place 1</option>
+          <option value="place2" data-en="Place 2" data-tr="Yer 2">Place 2</option>
+          <option value="place3" data-en="Place 3" data-tr="Yer 3">Place 3</option>
+          <option value="place4" data-en="Place 4" data-tr="Yer 4">Place 4</option>
+          <option value="place5" data-en="Place 5" data-tr="Yer 5">Place 5</option>
+          <option value="place6" data-en="Place 6" data-tr="Yer 6">Place 6</option>
         </select>
       </label>
       <label class="food-filter">
         <span data-en="Cooked by" data-tr="Yapan">Cooked by</span>
         <select id="food-cook">
           <option value="" data-en="Anyone" data-tr="Fark etmez">Anyone</option>
-          <option value="me" data-en="Me" data-tr="Ben">Me</option>
-          <option value="someone-else" data-en="Someone else" data-tr="Başka biri">Someone else</option>
+          <option value="person1" data-en="Person 1" data-tr="Kişi 1">Person 1</option>
+          <option value="person2" data-en="Person 2" data-tr="Kişi 2">Person 2</option>
         </select>
       </label>
       <label class="food-airplane-filter">
@@ -73,33 +75,33 @@
 
     <!-- SECTION 1: cooked by someone else -->
     <section class="food-section" aria-labelledby="by-others">
-      <h2 id="by-others">cooked by someone else</h2>
+      <h2 id="by-others" data-en="cooked by person 2" data-tr="kişi 2 tarafından yapıldı">cooked by person 2</h2>
       <div class="food-grid">
 
-        <button class="food-card" type="button" data-open="lahmacun" data-country="Turkey" data-place="Local place near home" data-cooked-by="someone-else" data-airplane="false">
-          <img src="images/foodiko/lahmacun.jpg" alt="Lahmacun rolled with parsley and lemon" width="400" height="220" onerror="this.style.display='none'">
+        <button class="food-card" type="button" data-open="food1" data-country="country1" data-place="place1" data-cooked-by="person2" data-airplane="false">
+          <img src="images/foodiko/food1-image1.jpg" alt="Food 1 image 1" width="400" height="220" onerror="this.style.display='none'">
           <span class="food-card-text">
-            <span class="card-place">Local place near home</span>
-            <span class="card-food">Lahmacun</span>
-            <span class="card-tag">cooked by someone else</span>
+            <span class="card-place">Place 1</span>
+            <span class="card-food">Food 1</span>
+            <span class="card-tag">cooked by person 2</span>
           </span>
         </button>
 
-        <button class="food-card" type="button" data-open="ramen" data-country="Japan" data-place="Friend's kitchen" data-cooked-by="someone-else" data-airplane="false">
-          <img src="images/foodiko/ramen.jpg" alt="Bowl of ramen with soft egg" width="400" height="220" onerror="this.style.display='none'">
+        <button class="food-card" type="button" data-open="food2" data-country="country2" data-place="place2" data-cooked-by="person2" data-airplane="false">
+          <img src="images/foodiko/food2-image1.jpg" alt="Food 2 image 1" width="400" height="220" onerror="this.style.display='none'">
           <span class="food-card-text">
-            <span class="card-place">Friend's kitchen</span>
-            <span class="card-food">Ramen</span>
-            <span class="card-tag">cooked by someone else</span>
+            <span class="card-place">Place 2</span>
+            <span class="card-food">Food 2</span>
+            <span class="card-tag">cooked by person 2</span>
           </span>
         </button>
 
-        <button class="food-card" type="button" data-open="borek" data-country="Turkey" data-place="Mom's kitchen" data-cooked-by="someone-else" data-airplane="false">
-          <img src="images/foodiko/borek.jpg" alt="Golden börek on a plate" width="400" height="220" onerror="this.style.display='none'">
+        <button class="food-card" type="button" data-open="food3" data-country="country1" data-place="place3" data-cooked-by="person2" data-airplane="false">
+          <img src="images/foodiko/food3-image1.jpg" alt="Food 3 image 1" width="400" height="220" onerror="this.style.display='none'">
           <span class="food-card-text">
-            <span class="card-place">Mom's kitchen</span>
-            <span class="card-food">Mom's börek</span>
-            <span class="card-tag">cooked by someone else</span>
+            <span class="card-place">Place 3</span>
+            <span class="card-food">Food 3</span>
+            <span class="card-tag">cooked by person 2</span>
           </span>
         </button>
 
@@ -107,33 +109,33 @@
     </section>
  <!-- SECTION 2: cooked by me -->
     <section class="food-section" aria-labelledby="by-me">
-      <h2 id="by-me">cooked by me</h2>
+      <h2 id="by-me" data-en="cooked by person 1" data-tr="kişi 1 tarafından yapıldı">cooked by person 1</h2>
       <div class="food-grid">
 
-        <button class="food-card" type="button" data-open="menemen" data-country="Turkey" data-place="Home kitchen" data-cooked-by="me" data-airplane="false">
-          <img src="images/foodiko/menemen.jpg" alt="Menemen in a pan" width="400" height="220" onerror="this.style.display='none'">
+        <button class="food-card" type="button" data-open="food4" data-country="country1" data-place="place4" data-cooked-by="person1" data-airplane="false">
+          <img src="images/foodiko/food4-image1.jpg" alt="Food 4 image 1" width="400" height="220" onerror="this.style.display='none'">
           <span class="food-card-text">
-            <span class="card-place">Home kitchen</span>
-            <span class="card-food">Menemen</span>
-            <span class="card-tag">cooked by me</span>
+            <span class="card-place">Place 4</span>
+            <span class="card-food">Food 4</span>
+            <span class="card-tag">cooked by person 1</span>
           </span>
         </button>
 
-        <button class="food-card" type="button" data-open="lentil" data-country="Turkey" data-place="Home kitchen" data-cooked-by="me" data-airplane="false">
-          <img src="images/foodiko/lentil-soup.jpg" alt="Lentil soup in a bowl" width="400" height="220" onerror="this.style.display='none'">
+        <button class="food-card" type="button" data-open="food5" data-country="country1" data-place="place5" data-cooked-by="person1" data-airplane="false">
+          <img src="images/foodiko/food5-image1.jpg" alt="Food 5 image 1" width="400" height="220" onerror="this.style.display='none'">
           <span class="food-card-text">
-            <span class="card-place">Home kitchen</span>
-            <span class="card-food">Mercimek çorbası</span>
-            <span class="card-tag">cooked by me</span>
+            <span class="card-place">Place 5</span>
+            <span class="card-food">Food 5</span>
+            <span class="card-tag">cooked by person 1</span>
           </span>
         </button>
 
-        <button class="food-card" type="button" data-open="pizza" data-country="Italy" data-place="Home kitchen" data-cooked-by="me" data-airplane="false">
-          <img src="images/foodiko/homemade-pizza.jpg" alt="Homemade pizza on a board" width="400" height="220" onerror="this.style.display='none'">
+        <button class="food-card" type="button" data-open="food6" data-country="country3" data-place="place6" data-cooked-by="person1" data-airplane="false">
+          <img src="images/foodiko/food6-image1.jpg" alt="Food 6 image 1" width="400" height="220" onerror="this.style.display='none'">
           <span class="food-card-text">
-            <span class="card-place">Home kitchen</span>
-            <span class="card-food">Homemade pizza</span>
-            <span class="card-tag">cooked by me</span>
+            <span class="card-place">Place 6</span>
+            <span class="card-food">Food 6</span>
+            <span class="card-tag">cooked by person 1</span>
           </span>
         </button>
 
@@ -141,124 +143,124 @@
     </section>
     <!-- POP-UP WINDOWS: one per food. Opened by the cards above. -->
 
-    <section class="window food-win" data-id="menemen" hidden aria-labelledby="w-menemen">
+    <section class="window food-win" data-id="food4" hidden aria-labelledby="w-food4">
       <div class="window-bar">
-        <span class="window-title">menemen</span>
+        <span class="window-title">Food 4</span>
         <button class="close-btn" type="button" aria-label="Close window">×</button>
       </div>
       <div class="window-body">
-        <h2 id="w-menemen"><span class="card-place">Home kitchen</span> Menemen</h2>
+        <h2 id="w-food4"><span class="card-place">Place 4</span> Food 4</h2>
         <div class="gallery">
-          <figure><img src="images/foodiko/menemen.jpg" alt="Menemen main" onerror="this.parentNode.style.display='none'"></figure>
-          <figure><img src="images/foodiko/menemen-2.jpg" alt="Menemen detail" onerror="this.parentNode.style.display='none'"></figure>
-          <figure><img src="images/foodiko/menemen-3.jpg" alt="Menemen plated" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/food4-image1.jpg" alt="Food 4 image 1" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/food4-image2.jpg" alt="Food 4 image 2" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/food4-image3.jpg" alt="Food 4 image 3" onerror="this.parentNode.style.display='none'"></figure>
         </div>
-        <h3>my comments</h3>
-        <p>The eggs are best when they are still loose. Next time I want to try feta and less pepper.</p>
-        <h3>other notes</h3>
-        <p class="muted">Add more photos, the recipe idea, or a short memory here.</p>
+        <h3>Notes</h3>
+        <p>Food 4 notes go here.</p>
+        <h3>More information</h3>
+        <p class="muted">Additional information for Food 4.</p>
       </div>
     </section>
 
-    <section class="window food-win" data-id="lentil" hidden aria-labelledby="w-lentil">
+    <section class="window food-win" data-id="food5" hidden aria-labelledby="w-food5">
       <div class="window-bar">
-        <span class="window-title">mercimek çorbası</span>
+        <span class="window-title">Food 5</span>
         <button class="close-btn" type="button" aria-label="Close window">×</button>
       </div>
       <div class="window-body">
-        <h2 id="w-lentil"><span class="card-place">Home kitchen</span> Mercimek çorbası</h2>
+        <h2 id="w-food5"><span class="card-place">Place 5</span> Food 5</h2>
         <div class="gallery">
-          <figure><img src="images/foodiko/lentil-soup.jpg" alt="Lentil soup main" onerror="this.parentNode.style.display='none'"></figure>
-          <figure><img src="images/foodiko/lentil-soup-2.jpg" alt="Lentil soup detail" onerror="this.parentNode.style.display='none'"></figure>
-          <figure><img src="images/foodiko/lentil-soup-3.jpg" alt="Lentil soup with lemon" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/food5-image1.jpg" alt="Food 5 image 1" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/food5-image2.jpg" alt="Food 5 image 2" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/food5-image3.jpg" alt="Food 5 image 3" onerror="this.parentNode.style.display='none'"></figure>
         </div>
-        <h3>my comments</h3>
-        <p>The lemon at the end is not optional. Mint butter on top is a good upgrade.</p>
-        <h3>other notes</h3>
-        <p class="muted">Add more photos, the recipe idea, or a short memory here.</p>
+        <h3>Notes</h3>
+        <p>Food 5 notes go here.</p>
+        <h3>More information</h3>
+        <p class="muted">Additional information for Food 5.</p>
       </div>
     </section>
 
-    <section class="window food-win" data-id="pizza" hidden aria-labelledby="w-pizza">
+    <section class="window food-win" data-id="food6" hidden aria-labelledby="w-food6">
       <div class="window-bar">
-        <span class="window-title">homemade pizza</span>
+        <span class="window-title">Food 6</span>
         <button class="close-btn" type="button" aria-label="Close window">×</button>
       </div>
       <div class="window-body">
-        <h2 id="w-pizza"><span class="card-place">Home kitchen</span> Homemade pizza</h2>
+        <h2 id="w-food6"><span class="card-place">Place 6</span> Food 6</h2>
         <div class="gallery">
-          <figure><img src="images/foodiko/homemade-pizza.jpg" alt="Pizza main" onerror="this.parentNode.style.display='none'"></figure>
-          <figure><img src="images/foodiko/homemade-pizza-2.jpg" alt="Pizza dough" onerror="this.parentNode.style.display='none'"></figure>
-          <figure><img src="images/foodiko/homemade-pizza-3.jpg" alt="Pizza slice" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/food6-image1.jpg" alt="Food 6 image 1" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/food6-image2.jpg" alt="Food 6 image 2" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/food6-image3.jpg" alt="Food 6 image 3" onerror="this.parentNode.style.display='none'"></figure>
         </div>
-        <h3>my comments</h3>
-        <p>The dough needs a longer rest. Next time I want to try a 24 hour dough.</p>
-        <h3>other notes</h3>
-        <p class="muted">Add more photos, the recipe idea, or a short memory here.</p>
+        <h3>Notes</h3>
+        <p>Food 6 notes go here.</p>
+        <h3>More information</h3>
+        <p class="muted">Additional information for Food 6.</p>
       </div>
     </section>
 
-    <section class="window food-win" data-id="lahmacun" hidden aria-labelledby="w-lahmacun">
+    <section class="window food-win" data-id="food1" hidden aria-labelledby="w-food1">
       <div class="window-bar">
-        <span class="window-title">lahmacun</span>
+        <span class="window-title">Food 1</span>
         <button class="close-btn" type="button" aria-label="Close window">×</button>
       </div>
       <div class="window-body">
-        <h2 id="w-lahmacun"><span class="card-place">Local place near home</span> Lahmacun</h2>
+        <h2 id="w-food1"><span class="card-place">Place 1</span> Food 1</h2>
         <div class="gallery">
-          <figure><img src="images/foodiko/lahmacun.jpg" alt="Lahmacun main" onerror="this.parentNode.style.display='none'"></figure>
-          <figure><img src="images/foodiko/lahmacun-2.jpg" alt="Lahmacun rolled" onerror="this.parentNode.style.display='none'"></figure>
-          <figure><img src="images/foodiko/lahmacun-3.jpg" alt="Lahmacun with lemon" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/food1-image1.jpg" alt="Food 1 image 1" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/food1-image2.jpg" alt="Food 1 image 2" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/food1-image3.jpg" alt="Food 1 image 3" onerror="this.parentNode.style.display='none'"></figure>
         </div>
-        <h3>my comments</h3>
-        <p>The crispy edge is the best part. Ask for extra lemon.</p>
-        <h3>other notes</h3>
-        <p class="muted">Add more photos, the place details, or a short memory here.</p>
+        <h3>Notes</h3>
+        <p>Food 1 notes go here.</p>
+        <h3>More information</h3>
+        <p class="muted">Additional information for Food 1.</p>
       </div>
     </section>
 
-    <section class="window food-win" data-id="ramen" hidden aria-labelledby="w-ramen">
+    <section class="window food-win" data-id="food2" hidden aria-labelledby="w-food2">
       <div class="window-bar">
-        <span class="window-title">ramen</span>
+        <span class="window-title">Food 2</span>
         <button class="close-btn" type="button" aria-label="Close window">×</button>
       </div>
       <div class="window-body">
-        <h2 id="w-ramen"><span class="card-place">Friend's kitchen</span> Ramen</h2>
+        <h2 id="w-food2"><span class="card-place">Place 2</span> Food 2</h2>
         <div class="gallery">
-          <figure><img src="images/foodiko/ramen.jpg" alt="Ramen main" onerror="this.parentNode.style.display='none'"></figure>
-          <figure><img src="images/foodiko/ramen-2.jpg" alt="Ramen broth" onerror="this.parentNode.style.display='none'"></figure>
-          <figure><img src="images/foodiko/ramen-3.jpg" alt="Ramen egg" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/food2-image1.jpg" alt="Food 2 image 1" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/food2-image2.jpg" alt="Food 2 image 2" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/food2-image3.jpg" alt="Food 2 image 3" onerror="this.parentNode.style.display='none'"></figure>
         </div>
-        <h3>my comments</h3>
-        <p>The broth was rich and the egg was perfect. The noodles were a bit too soft.</p>
-        <h3>other notes</h3>
-        <p class="muted">Add more photos, the recipe idea, or a short memory here.</p>
+        <h3>Notes</h3>
+        <p>Food 2 notes go here.</p>
+        <h3>More information</h3>
+        <p class="muted">Additional information for Food 2.</p>
       </div>
     </section>
 
-    <section class="window food-win" data-id="borek" hidden aria-labelledby="w-borek">
+    <section class="window food-win" data-id="food3" hidden aria-labelledby="w-food3">
       <div class="window-bar">
-        <span class="window-title">mom's börek</span>
+        <span class="window-title">Food 3</span>
         <button class="close-btn" type="button" aria-label="Close window">×</button>
       </div>
       <div class="window-body">
-        <h2 id="w-borek"><span class="card-place">Mom's kitchen</span> Mom's börek</h2>
+        <h2 id="w-food3"><span class="card-place">Place 3</span> Food 3</h2>
         <div class="gallery">
-          <figure><img src="images/foodiko/borek.jpg" alt="Börek main" onerror="this.parentNode.style.display='none'"></figure>
-          <figure><img src="images/foodiko/borek-2.jpg" alt="Börek slice" onerror="this.parentNode.style.display='none'"></figure>
-          <figure><img src="images/foodiko/borek-3.jpg" alt="Börek with tea" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/food3-image1.jpg" alt="Food 3 image 1" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/food3-image2.jpg" alt="Food 3 image 2" onerror="this.parentNode.style.display='none'"></figure>
+          <figure><img src="images/foodiko/food3-image3.jpg" alt="Food 3 image 3" onerror="this.parentNode.style.display='none'"></figure>
         </div>
-        <h3>my comments</h3>
-        <p>The edges are the best part. I need to ask her for the exact cheese ratio and write it down.</p>
-        <h3>other notes</h3>
-        <p class="muted">Add more photos, the recipe idea, or a short memory here.</p>
+        <h3>Notes</h3>
+        <p>Food 3 notes go here.</p>
+        <h3>More information</h3>
+        <p class="muted">Additional information for Food 3.</p>
       </div>
     </section>
 
   </main>
 
   <footer class="footer">
-    <p>&copy; <span id="year"></span> İ. Kayra Orman</p>
+    <p>&copy; <span id="year"></span></p>
   </footer>
 
   <script src="script.js"></script>
