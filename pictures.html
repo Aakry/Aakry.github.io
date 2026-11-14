@@ -31,7 +31,7 @@
         <span data-en="Country" data-tr="Ülke">Country</span>
         <select id="picture-country">
           <option value="" data-en="All countries" data-tr="Tüm ülkeler">All countries</option>
-          <option value="Turkey" data-en="Turkey" data-tr="Türkiye">Turkey</option>
+          <option value="Türkiye" data-en="Türkiye" data-tr="Türkiye">Türkiye</option>
         </select>
       </label>
       <label class="food-filter">
@@ -67,13 +67,38 @@
     <p id="picture-no-results" class="food-no-results muted" role="status" aria-live="polite" hidden data-en="No photos match these filters." data-tr="Bu filtrelere uygun fotoğraf bulunamadı.">No photos match these filters.</p>
 
     <section class="picture-grid" aria-label="Photo gallery" data-en-label="Photo gallery" data-tr-label="Fotoğraf galerisi">
-      <figure class="picture-card" data-country="Turkey" data-city="Istanbul" data-location="Istanbul Technical University" data-theme="architecture" data-device="iPhone 17e">
-        <img src="images/pictures/pictures.jpg" alt="Photo 1" width="250" height="250">
-        <figcaption>
+      <button class="picture-card" type="button" data-open="photo1" data-country="Türkiye" data-city="Istanbul" data-location="Istanbul Technical University" data-theme="architecture" data-device="iPhone 17e" aria-label="Open Photo 1">
+        <img src="images/pictures/pictures.jpg" alt="" width="250" height="250">
+        <span class="picture-card-caption">
           <strong data-en="Photo 1" data-tr="Fotoğraf 1">Photo 1</strong>
-          <span data-en="Istanbul Technical University, Istanbul, Turkey · Architecture · iPhone 17e" data-tr="İstanbul Teknik Üniversitesi, İstanbul, Türkiye · Mimari · iPhone 17e">Istanbul Technical University, Istanbul, Turkey · Architecture · iPhone 17e</span>
-        </figcaption>
-      </figure>
+          <span data-en="Istanbul Technical University, Istanbul, Türkiye · Architecture · iPhone 17e" data-tr="İstanbul Teknik Üniversitesi, İstanbul, Türkiye · Mimari · iPhone 17e">Istanbul Technical University, Istanbul, Türkiye · Architecture · iPhone 17e</span>
+        </span>
+      </button>
+    </section>
+
+    <section class="window picture-win" data-id="photo1" hidden aria-labelledby="photo1-title">
+      <div class="window-bar">
+        <span class="window-title" data-en="Photo 1" data-tr="Fotoğraf 1">Photo 1</span>
+        <button class="close-btn" type="button" aria-label="Close window" data-en-label="Close window" data-tr-label="Pencereyi kapat">×</button>
+      </div>
+      <div class="window-body picture-detail">
+        <h2 id="photo1-title" data-en="Photo 1" data-tr="Fotoğraf 1">Photo 1</h2>
+        <img class="picture-original" src="images/pictures/pictures.jpg" alt="Photo 1, taken at Istanbul Technical University">
+        <dl class="picture-metadata">
+          <dt data-en="Location" data-tr="Konum">Location</dt>
+          <dd data-en="Istanbul Technical University" data-tr="İstanbul Teknik Üniversitesi">Istanbul Technical University</dd>
+          <dt data-en="City" data-tr="Şehir">City</dt>
+          <dd data-en="Istanbul" data-tr="İstanbul">Istanbul</dd>
+          <dt data-en="Country" data-tr="Ülke">Country</dt>
+          <dd>Türkiye</dd>
+          <dt data-en="Theme" data-tr="Tema">Theme</dt>
+          <dd data-en="Architecture" data-tr="Mimari">Architecture</dd>
+          <dt data-en="Device" data-tr="Cihaz">Device</dt>
+          <dd>iPhone 17e</dd>
+        </dl>
+        <h3 data-en="Comment" data-tr="Yorum">Comment</h3>
+        <p class="muted" data-en="Add a comment or memory about this photo here." data-tr="Bu fotoğrafla ilgili yorumunu veya anını buraya ekle.">Add a comment or memory about this photo here.</p>
+      </div>
     </section>
   </main>
 

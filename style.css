@@ -347,7 +347,7 @@ summary {
   .icon { width: 84px; }
   .icon-img { font-size: 1.8rem; }
 
-  .window:not(.food-win) {
+  .window:not(.food-win):not(.picture-win) {
     position: relative;
     width: calc(100% - 1.5rem);
     max-height: none;
@@ -437,7 +437,8 @@ summary {
   color: var(--muted);
 }
 
-.food-win {
+.food-win,
+.picture-win {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -509,24 +510,32 @@ summary {
 }
 
 .picture-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   min-width: 0;
   margin: 0;
+  padding: 0;
   overflow: hidden;
+  color: var(--ink);
   background: var(--surface);
   border: 2px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  text-align: left;
+  cursor: pointer;
 }
 
 .picture-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: auto;
+  aspect-ratio: 1;
   object-fit: cover;
   background: var(--surface);
 }
 
-.picture-card figcaption {
+.picture-card-caption {
   display: grid;
   gap: 0.25rem;
   padding: 0.75rem;
@@ -534,7 +543,34 @@ summary {
   font-size: 0.9rem;
 }
 
-.picture-card figcaption span { color: var(--muted); }
+.picture-card-caption span { color: var(--muted); }
+
+.picture-detail { text-align: center; }
+
+.picture-detail h2 { text-align: left; }
+
+.picture-original {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  margin: 0 auto 1rem;
+}
+
+.picture-metadata {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.3rem 0.8rem;
+  margin: 0;
+  text-align: left;
+}
+
+.picture-metadata dt { color: var(--muted); }
+.picture-metadata dd { margin: 0; }
+
+.picture-detail h3 { text-align: left; }
+
+.picture-detail > p { text-align: left; }
 
 .detail-body {
   background: var(--surface);
