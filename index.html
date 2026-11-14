@@ -85,6 +85,20 @@
       <div class="window-body">
         <h2 id="pages-title" data-en="Pages" data-tr="Sayfalar">Pages</h2>
         <div class="box-scroll">
+          <button class="page-box" type="button" data-open="technical">
+            <img class="page-thumb" src="images/technical.jpg" alt="" width="56" height="56" onerror="this.style.display='none'">
+            <span class="page-text">
+              <span class="page-name" data-en="Technical (somewhat)" data-tr="Teknik (biraz)">Technical (somewhat)</span>
+              <span class="page-desc" data-en="can't promise anything original or interesting." data-tr="orijinal veya ilginç bir şey sunma sözü veremem.">can't promise anything original or interesting.</span>
+            </span>
+          </button>
+          <button class="page-box" type="button" data-open="events">
+            <span class="page-thumb page-thumb-icon" aria-hidden="true">✦</span>
+            <span class="page-text">
+              <span class="page-name" data-en="Events &amp; Organizations" data-tr="Etkinlikler ve Organizasyonlar">Events &amp; Organizations</span>
+              <span class="page-desc" data-en="Workshops, youth exchanges, and other initiatives." data-tr="Atölyeler, gençlik değişimleri ve diğer girişimler.">Workshops, youth exchanges, and other initiatives.</span>
+            </span>
+          </button>
           <button class="page-box" type="button" data-open="foodiko">
             <img class="page-thumb" src="images/foodiko.jpg" alt="" width="56" height="56" onerror="this.style.display='none'">
             <span class="page-text">
@@ -97,13 +111,6 @@
             <span class="page-text">
               <span class="page-name" data-en="PICTURES" data-tr="FOTOĞRAFLAR">PICTURES</span>
               <span class="page-desc" data-en="pictures possibly i took." data-tr="muhtemelen benim çektiğim fotoğraflar.">pictures possibly i took.</span>
-            </span>
-          </button>
-          <button class="page-box" type="button" data-open="technical">
-            <img class="page-thumb" src="images/technical.jpg" alt="" width="56" height="56" onerror="this.style.display='none'">
-            <span class="page-text">
-              <span class="page-name" data-en="TECHNICAL STUFF" data-tr="TEKNİK ŞEYLER">TECHNICAL STUFF</span>
-              <span class="page-desc" data-en="its either something cool or something nerd." data-tr="ya havalı ya da nerdçe bir şey.">its either something cool or something nerd.</span>
             </span>
           </button>
           <button class="page-box" type="button" data-open="soon-1">
@@ -128,6 +135,22 @@
             </span>
           </button>
         </div>
+      </div>
+    </section>
+
+    <!-- Events and organizations page window -->
+    <section class="window pos-page" data-id="events" hidden aria-labelledby="events-title">
+      <div class="window-bar">
+        <span class="window-title" data-en="Events &amp; Organizations" data-tr="Etkinlikler ve Organizasyonlar">Events &amp; Organizations</span>
+        <button class="close-btn" type="button" aria-label="Close window" data-en-label="Close window" data-tr-label="Pencereyi kapat">×</button>
+      </div>
+      <div class="window-body">
+        <h2 id="events-title" data-en="Events &amp; Organizations" data-tr="Etkinlikler ve Organizasyonlar">Events &amp; Organizations</h2>
+        <p data-en="Workshops, youth exchanges, and other initiatives I've created or helped organize." data-tr="Oluşturduğum veya düzenlenmesine katkıda bulunduğum atölyeler, gençlik değişimleri ve diğer girişimler.">Workshops, youth exchanges, and other initiatives I've created or helped organize.</p>
+        <h3 data-en="Digital Twin Creation Workshop" data-tr="Dijital İkiz Oluşturma Atölyesi">Digital Twin Creation Workshop</h3>
+        <p class="muted" data-en="More information coming soon." data-tr="Daha fazla bilgi yakında.">More information coming soon.</p>
+        <h3 data-en="Turkish-German Youth Bridge youth exchange" data-tr="Türk-Alman Gençlik Köprüsü gençlik değişimi">Turkish-German Youth Bridge youth exchange</h3>
+        <p class="muted" data-en="More information coming soon." data-tr="Daha fazla bilgi yakında.">More information coming soon.</p>
       </div>
     </section>
 
@@ -159,16 +182,16 @@
       </div>
     </section>
 
-    <!-- TECHNICAL STUFF page window -->
+    <!-- Technical (somewhat) page window -->
     <section class="window pos-page" data-id="technical" hidden aria-labelledby="technical-title">
       <div class="window-bar">
-        <span class="window-title">TECHNICAL STUFF</span>
+        <span class="window-title">Technical (somewhat)</span>
         <button class="close-btn" type="button" aria-label="Close window" data-en-label="Close window" data-tr-label="Pencereyi kapat">×</button>
       </div>
       <div class="window-body">
-        <h2 id="technical-title" data-en="TECHNICAL STUFF" data-tr="TEKNİK ŞEYLER">TECHNICAL STUFF</h2>
-        <p data-en="its either something cool or something nerd." data-tr="ya havalı ya da nerdçe bir şey.">its either something cool or something nerd.</p>
-        <p class="muted" data-en="content coming soon." data-tr="içerik yakında.">content coming soon.</p>
+        <h2 id="technical-title" data-en="Technical (somewhat)" data-tr="TEKNİK ŞEYLER">Technical (somewhat)</h2>
+        <p data-en="I can't promise that you will find anything interesting or original." data-tr="orijinal veya ilginç bir şey bulamayabilirsiniz.">I can't promise that you will find anything interesting or original.</p>
+        <p class="muted" data-en="Mainly done at school or by myself." data-tr="içerik yakında.">Genel olarak okulda veya kendi yaptığım şeyler mevcut.</p>
         <p><a class="full-link" href="technical.html" target="_blank" rel="noopener" data-en="open full page" data-tr="tam sayfayı aç">open full page</a></p>
       </div>
     </section>

@@ -386,6 +386,14 @@ summary {
   background: var(--surface);
 }
 
+.page-thumb-icon {
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  font-family: var(--font-ui);
+  font-size: 2rem;
+}
+
 .page-text { display: block; min-width: 0; }
 
 .page-name {
