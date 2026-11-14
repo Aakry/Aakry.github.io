@@ -600,6 +600,18 @@ summary {
 
 .msg-form button { margin-top: 0.75rem; }
 
+.msg-form .hp {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .detail-body {
   background: var(--surface);
   border: 2px solid var(--border);
