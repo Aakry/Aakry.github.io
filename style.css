@@ -621,6 +621,73 @@ summary {
   min-height: 240px;
 }
 
+/* ===== Projects & Technical detail cards ===== */
+.project-card {
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  background: var(--bg);
+  box-shadow: 2px 2px 0 var(--border);
+}
+
+.project-card:last-child {
+  margin-bottom: 0;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.project-title {
+  font-family: var(--font-ui);
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.project-badge {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  color: var(--muted);
+}
+
+.project-desc {
+  margin: 0.6rem 0 0.9rem;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.project-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  font-family: var(--font-ui);
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.project-meta-item:hover {
+  color: var(--accent);
+}
+
 @media (max-width: 720px) {
   .detail { padding: 4rem 1rem 2rem; }
   .detail-header h1 { font-size: 1.6rem; }
